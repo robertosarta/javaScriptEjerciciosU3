@@ -565,9 +565,71 @@
             window.alert("Sin mas.")
         }
     }while (dialogo !== "salir");
-*/
 
-        //Ejercicio
+    //Ejercicio 26 (EXTRA)
+    let contador = 0;
+    let contadorPc = 0;
+
+    function randomInt(min, max){
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min);
+    }
+
+    do{
+        let numero = Number(prompt("Muy buenas, juguemos a piedra(1), papel(2) o tijera(3). Y bien ¿cual eliges?"));
+        if (numero !== 1 && numero !== 2 && numero !== 3){
+            window.alert("Por favor ingresa un numero del 1 al 3");
+            continue;
+        }
+        let jugadaPc = randomInt(1, 3);
+
+        switch(numero){
+        case 1:
+            if (jugadaPc === 1){
+                window.alert("¡Empate!");
+            }else if (jugadaPc === 2){
+                contadorPc++;
+                window.alert("¡Fallaste!");
+            }else if (jugadaPc === 3){
+                contador++;
+                window.alert("¡Un punto para slytherin!");
+            }
+        break
+        case 2:
+            if (jugadaPc === 1){
+                contador++;
+                window.alert("¡Un punto para slytherin!");
+            }else if (jugadaPc === 2){
+                window.alert("¡Empate!");
+            }else if (jugadaPc === 3){
+                contadorPc++
+                window.alert("¡Fallaste!");
+            }
+        break
+        case 3:
+            if (jugadaPc === 1){
+                contadorPc++;
+                window.alert("¡Fallaste!");
+            }else if (jugadaPc === 2){
+                contador++;
+                window.alert("¡Un punto para slytherin!");
+            }else if (jugadaPc === 3){
+                window.alert("¡Empate!");
+            }
+        break
+        }
+        window.alert(`Tienes ${contador} puntos`)
+    }while (contador !== 3 && contadorPc !== 3);
+
+    if (contador === 3){
+        window.alert("!Has ganado el juego!");
+    }else if (contadorPc === 3){
+        window.alert("¡El ordenador ha ganado esta vez!")
+    }
+
+    */
+    //Ejercicio
     </script>
 </body>
 </html>
