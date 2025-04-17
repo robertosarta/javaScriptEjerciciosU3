@@ -1,0 +1,18 @@
+let num1 = Number(prompt("Ingresa el primer número:"));
+let num2 = Number(prompt("Ingresa el segundo número:"));
+
+// Realizar operaciones
+let suma = num1 + num2;
+let resta = num1 - num2;
+let multiplicacion = num1 * num2;
+let media = (num1 + num2) / 2;
+let mayor = Math.max(num1, num2);
+let menor = Math.min(num1, num2);
+
+// Mostrar los resultados
+console.log(`Suma: ${suma}`);
+console.log(`Resta: ${resta}`);
+console.log(`Multiplicación: ${multiplicacion}`);
+console.log(`Media: ${media}`);
+console.log(`Número mayor: ${mayor}`);
+console.log(`Número menor: ${menor}`);
