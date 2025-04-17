@@ -526,9 +526,48 @@
                 }
         }
 
-            */
-    //Ejercicio 25
-    let 
+    //Ejercicio 25 (segun las indicaciones)
+    let dialogo;
+
+    do{
+        dialogo = prompt(`Hola me llamo Bob ¿Que se te pasa por la cabeza?, si te aburres y quieres terminar nuestra conversacion dime "salir"`);
+        if(dialogo === "salir"){
+            window.alert("Ha sido un placer, adios")
+        }else if (dialogo === ""){
+            window.alert("Vale con que esas tenemos...")                                       
+        }else if ((dialogo.includes("?") || dialogo.includes("¿")) && (dialogo.includes("¡") || dialogo.includes("!"))){  
+            window.alert("¡Eh, tranquilízate! Yo sé lo que hago.")
+        }else if (dialogo.includes("?") || dialogo.includes("¿")){
+            window.alert("¡Claro!")  
+        }else if (dialogo.includes("!") || dialogo.includes("¡")){
+            window.alert("¡Eh!, tranquilizate.")
+        }else {
+            window.alert("Sin mas.")
+        }
+    }while (dialogo !== "salir");
+
+    //Ejercicio 25 (Prueba añadiendo mayus a modo de grito)
+    let dialogo;
+
+    do{
+        dialogo = prompt(`Hola me llamo Bob ¿Que se te pasa por la cabeza?, si te aburres y quieres terminar nuestra conversacion dime "salir"`);
+        if(dialogo === "salir"){
+            window.alert("Ha sido un placer, adios")
+        }else if (dialogo === ""){
+            window.alert("Vale con que esas tenemos...")                                       
+        }else if ((dialogo.includes("?") || dialogo.includes("¿")) && dialogo === dialogo.toUpperCase() && /[a-zA-Z]/.test(dialogo)){    //aqui lo del [a-zA-Z] tuve que buscarlo porque no sabia como eliminar el fallo de que si introducias solo numeros saltaba esta opcion
+            window.alert("¡Eh, tranquilízate! Yo sé lo que hago.")
+        }else if (dialogo.includes("?") || dialogo.includes("¿")){
+            window.alert("¡Claro!")  
+        }else if (dialogo === dialogo.toUpperCase() && /[a-zA-Z]/.test(dialogo)){
+            window.alert("¡Eh!, tranquilizate.")
+        }else {
+            window.alert("Sin mas.")
+        }
+    }while (dialogo !== "salir");
+*/
+
+        //Ejercicio
     </script>
 </body>
 </html>
