@@ -628,8 +628,24 @@
         window.alert("¡El ordenador ha ganado esta vez!")
     }
 
+
+    //BUCLES
+    //Ejercicio 1
+    let edad = Number(prompt("Que edad tienes?"));
+
+    if (edad <= 0){
+        window.alert("introduce un número valido por favor")
+    }else {
+        for(let num = 1; num <= edad; num++){
+            window.alert(`feliz ${edad} cumpleaños`)
+        }
+    }
     */
-    //Ejercicio
+    //Prueba
+    let persona = { nombre: "Juan", edad: 30, ciudad: "Madrid" };
+for (let clave in persona) {
+window.alert(clave + ":"+ persona[clave]);
+}
     </script>
 </body>
 </html>
