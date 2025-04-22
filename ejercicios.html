@@ -656,7 +656,6 @@
         console.log("");
     }
 
-
     //Ejercicio 4 
     let suma = 0;
 
@@ -684,20 +683,63 @@
         }
     } while (numUser !==0);
 
-            */
-
     //Ejercicio 6
     console.log("Número  |  Factorial");
     console.log(".......................");
 
     for (let i = 1; i <= 10; i++){
-        let Factorial = 1;
+        let factorial = 1;
 
         for (let n = 1; n <= i; n++){
-            Factorial *= n;
+            factorial *= n;
         }
-        console.log(`${i}     | ${Factorial}`);
+        console.log(`${i}     | ${factorial}`);
     }
+
+    //Ejercicio 7
+    let resultado = 0;
+    let numUser;
+    do{
+        numUser = Number(prompt(`Dame un valor, si es "0" terminara el programa, los negativos no son valores validos`));
+        
+        if (numUser < 0){
+            window.alert("El valor introducido no es valido");
+        }else if (numUser > 0){
+            resultado += numUser;
+        }else if (numUser === 0){
+            window.alert(`Perfecto has introducido "0" asi que el programa finaliza ahora, la suma de los numeros que has introducido es ${resultado}`);
+        } 
+    }while(numUser !== 0);
+
+    //Ejercicio 8
+    let numUser;
+    let numUserUpper;
+
+    do{
+        numUser = prompt(`Escribe "P" si quieres probar con pares o "I" para impares `);
+        numUserUpper = numUser.toUpperCase();
+
+        if (numUserUpper === "P"){
+            for (let i = 1; i <= 100; i++){
+                if (i % 2 === 0){
+                    console.log(`${i}`);
+                }
+            }
+            break;
+        }else if (numUserUpper === "I"){
+            for (let i = 1; i <= 100; i++){
+                if (i % 2 !== 0){
+                    console.log(`${i}`);
+                }
+            }
+            break;
+        }else {
+            window.alert("ingresa un valor valido por favor");
+        }
+    }while(numUserUpper != "P" && numUserUpper != "I");
+            */
+    //Ejercicio 9
+    
     </script>
 </body>
 </html>
