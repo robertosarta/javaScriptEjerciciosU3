@@ -645,7 +645,7 @@
     let numUser = Number(prompt("Dame un valor"));
     let resultado = 0;
 
-    for(let contador = 0; contador <= numUser; contador++){
+    for(let contador = 1; contador <= numUser; contador++){
         resultado += contador;
     }
     window.alert("La suma del 1 a tu numero, en este caso: "+numUser+" es: "+resultado);
@@ -667,8 +667,37 @@
 
     let media = suma / 10;
     window.alert(`La media de los valores introducidos es: ${media}`);
-        */
+
     //Ejercicio 5
+    let numUser;
+    do{
+        numUser = Number(prompt(`Dame un valor, si es "0" terminara el programa`));
+        let resultado = 0;
+
+        if (numUser !== 0){
+            for(let contador = 1; contador <= numUser; contador++){
+                resultado += contador;
+            }
+            window.alert(`la suma del 1 al ${numUser} es: ${resultado}`);
+        }else {
+            window.alert(`Perfecto, has introducido "0" asi que el programa finaliza aqui.`);
+        }
+    } while (numUser !==0);
+
+            */
+
+    //Ejercicio 6
+    console.log("Número  |  Factorial");
+    console.log(".......................");
+
+    for (let i = 1; i <= 10; i++){
+        let Factorial = 1;
+
+        for (let n = 1; n <= i; n++){
+            Factorial *= n;
+        }
+        console.log(`${i}     | ${Factorial}`);
+    }
     </script>
 </body>
 </html>
