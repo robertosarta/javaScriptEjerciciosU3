@@ -739,7 +739,20 @@
     }while(numUserUpper != "P" && numUserUpper != "I");
             */
     //Ejercicio 9
-    
+    console.log("Impares  |  Pares");
+    console.log(".......................");
+
+    for (let i = 1; i <= 12; i++){
+        let par = ``;
+        let impar = ``;
+
+        if (i % 2 !== 0){
+            impar = i ** 2;
+        }else {
+            par = i ** 3;
+    }
+    console.log(`${impar}     | ${par}`);
+    }
     </script>
 </body>
 </html>
