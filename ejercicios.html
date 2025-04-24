@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <script>
-    /*
+      /*
     //Ejercicio 1//
         let num1 = Number(window.prompt("introduce un número"))
         let num2 = Number(window.prompt("introduce un número"))
@@ -737,7 +737,7 @@
             window.alert("ingresa un valor valido por favor");
         }
     }while(numUserUpper != "P" && numUserUpper != "I");
-            */
+    
     //Ejercicio 9
     console.log("Impares  |  Pares");
     console.log(".......................");
@@ -753,6 +753,91 @@
     }
     console.log(`${impar}     | ${par}`);
     }
+    
+    //Ejercicio 10
+    for (let i = 1; i <= 100; i++){
+        if(i % 5 !== 0){
+            console.log(`${i}`)
+        }
+    }
+    
+    //Ejercicio 11
+    
+    //Ejercicio 12
+    let num = prompt("Introduce un numero de 3 dígitos");
+
+    if (Number(num) >= 100 && Number(num) <= 999){
+        let suma = 0;
+        for (let digito of num){
+            suma += Number(digito);
+        }
+
+        window.alert(`La suma de los digitos de ${num} es ${suma}`);
+    }else {
+        window.alert("Introduce un numero de 3 dígitos");
+    }
+    
+    //Ejercicio 13
+    let dia = prompt("Introduce el dia de tu nacimiento");
+    let mes = prompt("Introduce el mes de tu nacimiento");
+    let año = prompt("Por último introduce el año de tu nacimiento y te daremos tu numero de la suerte");
+    let numeroSuerte = 0;
+    let fecha = [dia, mes, año];
+
+    for (let cifra of fecha){
+        numeroSuerte += Number(cifra);
+    }
+
+    while (numeroSuerte >= 10){
+        let suma = 0;
+        for (let cifra of String(numeroSuerte)){
+            suma += Number(cifra);
+        }
+        numeroSuerte = suma;
+    }
+
+    window.alert(`Tu número de la suerte es ${numeroSuerte}`);
+
+    //Ejercicio 14
+*/
+      //Ejercicio 15
+    let contraseña = prompt("introduce tu contraseña con al menos 8 caracteres, un numero y la primera letra en mayuscula:");
+    let esValida;
+    let numOk = false;
+
+    do {
+        esValida = true; 
+
+        if (contraseña.length < 8){
+        esValida = false;
+        window.alert("Tu contraseña debe tener al menos 8 caracteres.");
+        }
+
+        numOk = false;
+        for (let caracter of contraseña){
+        if (!isNaN(caracter)){
+            numOk = true;
+            break;
+            }
+        }
+        if (numOk === false){
+            esValida = false;
+            window.alert("Tu contraseña debe contener al menos 1 numero.")
+        }
+
+        if (contraseña[0] !== contraseña[0].toUpperCase()){
+        esValida = false;
+        window.alert("La primera letra debe ser mayuscula.");
+        }
+
+        if (esValida){
+        window.alert("Tu contraseña es valida");
+        } else {
+        window.alert("Tu contraseña no es valida, intentalo de nuevo siguiendo las pautas.");
+        contraseña = prompt("Intentalo con una contraseña con al menos 8 caracteres, un numero y la primera letra en mayuscula:")
+        }
+    } while (!esValida);
+
     </script>
 </body>
 </html>
