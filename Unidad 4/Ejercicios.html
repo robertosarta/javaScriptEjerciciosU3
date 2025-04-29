@@ -19,12 +19,32 @@
         miString[2] = prompt("Dame valores para mi string tercer aviso");
 
         console.log(`Tu segundo string era; ${miString[1]}, el tercero ha sido; ${miString[2]} y el primero; ${miString[0]}.` );
-    */
+    
         //Ejercicio 3
         let string = [];
         for (let i = 0; i < 10; i++){
-            string[i] = //valor deseado (de 20 - 11)
+            string[i] = 20 - i;
         }
+
+        for (let i = 0; i < 10; i++){
+            console.log(string[i]);
+        }
+
+        //Ejercicio 4
+        let valores = [];
+
+        for (let i = 0; i < 10; i++){
+            valores[i] = prompt(`introduce el valor numero ${i + 1}:`);
+        } 
+
+        document.write("<h3>Los valores introducidos son:</h3>");
+        for (let i = 0; i < 10; i++){
+            document.write(`${i + 1}: ${valores[i]}<br>`);
+        }
+        */
+        //Ejercicio 5
+        let meses = ["Enero", "Febrero", "Marzo", "Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+        
     </script>
 </body>
 </html>
