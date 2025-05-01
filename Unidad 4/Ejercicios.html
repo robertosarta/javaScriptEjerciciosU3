@@ -44,7 +44,13 @@
         */
         //Ejercicio 5
         let meses = ["Enero", "Febrero", "Marzo", "Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
-        
+        let numero = parseInt(prompt("Introduce un numero del 1 al 12"));
+
+        if (numero >= 1 && numero <=12){
+            document.write(`El mes numero ${numero} es: ${meses[numero - 1]}`);
+        }else {
+            document.write("Numero invalido. Tiene que ser del 1 al 12");
+        }
     </script>
 </body>
 </html>
