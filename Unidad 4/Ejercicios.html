@@ -51,8 +51,7 @@
         }else {
             document.write("Numero invalido. Tiene que ser del 1 al 12");
         }
-  */
-       //Ejercicio 7
+
         //Ejercicio 6
         let array = [];
 
@@ -66,9 +65,36 @@
                 menor = array[i];
             }
         }
-        console.log(array)
+
         document.write(`El valor mas pequeño es: ${menor}`);
-      
+        
+        //Ejercicio 7
+        let array = [1, 3, 8, 5, 8, 75, 6, 20, 96, 2];
+        let suma = 0;
+
+        for (let i = 0; i < array.length; i++){
+            suma += array[i]
+        }
+
+        let media = suma / array.length;
+        window.alert("La media es: " + media);
+        */
+        //Ejercicio 8
+        let edades = [];
+
+        for (let i = 0; i < 20; i++){
+            let edad = Math.floor(Math.random() * (35 - 18 +1)) + 18;
+            edades.push(edad);
+        }
+        
+        console.log("edades generadas:", edades);
+        let suma = 0;
+        for(let i = 0; i < edades.length; i++){
+            suma += edades[i];
+        }
+        
+        let media = suma / edades.length;
+        window.alert("La media de edad es:" + media.toFixed(2));
     </script>
 </body>
 </html>
