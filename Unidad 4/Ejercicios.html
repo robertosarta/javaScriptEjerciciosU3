@@ -78,7 +78,7 @@
 
         let media = suma / array.length;
         window.alert("La media es: " + media);
-        */
+        
         //Ejercicio 8
         let edades = [];
 
@@ -95,6 +95,38 @@
         
         let media = suma / edades.length;
         window.alert("La media de edad es:" + media.toFixed(2));
+        
+        //Ejercicio 9
+        let valores = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+        let posicion = parseInt(prompt("Introduce un numero entre 0 y 9"));
+
+        if (posicion >= 0 && posicion < 10){
+            valores[posicion] = valores[posicion] * 2;
+
+            window.alert("Tu numero modificado es: " + valores[posicion])
+            console.log("Array final: " + valores);
+            window.alert("Array final: " + valores.join(", ")); //Esto convierte el array en una cadena de texto para poder mostrarlo tambien por el window.alert que es mas comodo
+        }else {
+            window.alert("Posicion no valida");
+        }
+        */
+        //Ejercicio 10
+        let array = Array(11).fill(0);
+        let valor = parseInt(prompt("Introduce un número entre 0 y 10 o un valor negativo para terminar el programa."));
+
+        while (valor >= 0){
+            if (valor <= 10){
+                array[valor]++;
+            }else {
+                window.alert("número no válido");
+            }
+            valor = parseInt(prompt("Introduce otro número (negativo para terminar el programa):"))
+        } 
+
+        console.log("Número\tValor");  // con"\t" se hace un tabulado
+        for (let i = 0; i < array.length; i++){
+            console.log(`${i}\t${array[i]}`);
+        }
     </script>
 </body>
 </html>
