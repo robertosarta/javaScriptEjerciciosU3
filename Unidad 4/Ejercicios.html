@@ -8,6 +8,7 @@
 <body>
     <script>
         /*
+        //ARRAYS
         //Ejercicio 1
         let frutas = ["manzana","pera","melocoton","chirimoya","sandia","cereza","platano","paraguayo","aguacate","nectarina"]
         console.log(frutas);
@@ -109,7 +110,7 @@
         }else {
             window.alert("Posicion no valida");
         }
-        */
+        
         //Ejercicio 10
         let array = Array(11).fill(0);
         let valor = parseInt(prompt("Introduce un número entre 0 y 10 o un valor negativo para terminar el programa."));
@@ -127,6 +128,41 @@
         for (let i = 0; i < array.length; i++){
             console.log(`${i}\t${array[i]}`);
         }
+        
+        
+        //OBJETOS
+        //Ejercicio 1
+        let coche = {
+            color: "rojo",
+            marca: "Ford",
+            modelo: "Focus",
+            motor: {
+                cilindros: 4,
+                capacidad: 2.2
+            }
+        };
+
+        //comprobacion
+        console.log(coche);
+        alert("Marca: " + coche.marca);
+        alert("Cilindros: " + coche.motor.cilindros);
+        
+        //Ejercicio 2
+        let roberto = {
+            nombre: "Roberto",
+            edad: "28",
+        };
+
+        alert(JSON.stringify(roberto, null, 2)); //Con stringify convierte el objeto a cadena de texto y despues con null no reemplazamos nada y con 2 le damos espaciado por nivel
+        console.log(JSON.parse(JSON.stringify(roberto))); //Estos añadidos servian para mostrar el objeto en ese momento exacto, si no firefox muestra el objeto acualizado independientemente del momento del console.log
+        roberto.altura = "1.71";
+        alert(JSON.stringify(roberto, null, 2));
+        console.log(roberto);
+        */
+        //Ejercicio 3
+        //Lo hice en un documento aparte porque no estaba muy seguro de como introducirlo aqui con el resto :(
+
+        //Ejercicio 4
     </script>
 </body>
 </html>

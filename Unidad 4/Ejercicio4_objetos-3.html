@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 4_Objetos-3</title>
+    <style>
+        #numeroDiv{
+            width: 18.75rem;
+            height: 6.25rem;
+            text-align: center;
+            line-height: 6.25rem;
+            font-size: 1.5rem;
+            margin-top: 1.25rem;
+        }
+    </style>
+</head>
+<body>
+    <h2>Tu número</h2>
+    <script>
+        let numero = prompt("Introduce un número, de 0 a 99 sera verde, desde 100 a 200 amarillo y si es mayor de 200 será rojo");
+        numero = parseInt(numero);
+
+        let numeroDiv = document.createElement("div");
+        numeroDiv.id = "numeroDiv";
+        numeroDiv.innerText = numero;
+        document.body.appendChild(numeroDiv);
+
+        if (numero < 100){
+            numeroDiv.style.backgroundColor = "green";
+            numeroDiv.style.color = "white";
+        } else if (numero >= 100 && numero <= 200){
+            numeroDiv.style.backgroundColor = "yellow";
+            numeroDiv.style.color = "black";
+        } else if (numero > 200){
+            numeroDiv.style.backgroundColor = "red";
+            numeroDiv.style.color = "white";
+        }
+    </script>
+</body>
+</html>
