@@ -158,11 +158,12 @@
         roberto.altura = "1.71";
         alert(JSON.stringify(roberto, null, 2));
         console.log(roberto);
-        */
+        
         //Ejercicio 3
         //Lo hice en un documento aparte porque no estaba muy seguro de como introducirlo aqui con el resto :(
 
         //Ejercicio 4
+        let name = prompt("Introduce tu nombre:")
         let randomObject = {
             ordenador: {
                 cpu: "i5",
@@ -174,7 +175,18 @@
                 raton: "Forgeon",
                 teclado: "logitech"
             }
-        };
+        }; 
+
+        window.alert(randomObject.ordenador.board);
+        randomObject.ordenador.name = name;
+        window.alert(JSON.stringify(randomObject, null, 2));
+        console.log(randomObject);
+        */
+        //Ejercicio 5
+        let año = prompt(Number("En que año naciste?"));
+        let nombre = prompt("Cual es tu nombre?");
+        let apellido = prompt("Y por ultimo cual es tu apellido?");
+        let genero = prompt("Eres un hombre o una mujer?");
     </script>
 </body>
 </html>
