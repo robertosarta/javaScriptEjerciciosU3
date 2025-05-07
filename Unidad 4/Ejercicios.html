@@ -183,10 +183,93 @@
         console.log(randomObject);
         */
         //Ejercicio 5
-        let año = prompt(Number("En que año naciste?"));
+        let año = prompt("En que año naciste?");
         let nombre = prompt("Cual es tu nombre?");
         let apellido = prompt("Y por ultimo cual es tu apellido?");
-        let genero = prompt("Eres un hombre o una mujer?");
+        let genero = prompt(`Elige "masculino" o "femenino"`);
+
+        let letraNombre = {
+            A: "Vendaval",
+            B: "Fuego",
+            C: "Veneno",
+            D: "Luz",
+            E: "Madera",
+            F: "Bosque",
+            G: "Gamusino",
+            H: "Vision",
+            I: "Tralarilo",
+            J: "Bombardiro",
+            K: "plasma",
+            L: "Juez",
+            M: "Jurado",
+            N: "Verdugo",
+            Ñ: "Estela",
+            O: "Destruye",
+            P: "Creacion",
+            Q: "Elementalista",
+            R: "Arcano",
+            S: "Sello", 
+            T: "Sombra", 
+            U: "Rayo",
+            V: "Viento",
+            W: "Hielo", 
+            X: "Programa", 
+            Y: "Luz", 
+            Z: "Vacio",
+        };
+        let letraApellido = {
+            a: "Oscuro",
+            b: "Primigenio",
+            c: "Veloz",
+            d: "Inexorable",
+            e: "Invisible",
+            f: "Radiante",
+            g: "Cegador",
+            h: "Siniestro",
+            i: "Impasible",
+            j: "Redentor",
+            k: "Armado",
+            l: "Del pasado",
+            m: "Del futuro",
+            n: "Desaparecido",
+            ñ: "Supersónico",
+            o: "Ambulante",
+            p: "Letal",
+            q: "Explosivo",
+            r: "Soberano",
+            s: "Supremo",
+            t: "Demoniaco",
+            u: "Angelical",
+            v: "Infernal",
+            w: "Del monton",
+            x: "Maravilla",
+            y: "Impetuoso",
+            z: "Fantasmal"
+        }
+        let numeroAño = {
+            0: "Del infinito",
+            1: "Del caos",
+            2: "Del mas allá",
+            3: "Del espacio",
+            4: "De la singularidad",
+            5: "Del poder oscuro",
+            6: "Del dragon",
+            7: "De la noche",
+            8: "Del trueno",
+            9: "Iluminado",
+        };
+
+        let primeraLetra = nombre.charAt(0).toUpperCase();
+        let ultimaLetra = apellido.charAt(apellido.length - 1).toLowerCase();
+        let ultimoNumero = año.charAt(año.length - 1);
+
+        let parte1 = letraNombre[primeraLetra] || "Tung Tung";
+        let parte2 = letraApellido[ultimaLetra] || "Tung";
+        let parte3 = numeroAño[ultimoNumero] || "Sahur";
+        let prefijo = (genero.toLowerCase() === "femenino")? "La" : "El";
+
+        let nombreSuper = `${prefijo} ${parte1} ${parte2} ${parte3}`;
+        alert("Tu nombre de super es: " + nombreSuper);
     </script>
 </body>
 </html>
