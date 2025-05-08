@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #divEjercicio{
+            width: 18.75rem; 
+            height: 3.125rem; 
+            text-align: center;
+            line-height: 6.25rem;
+            font-size: 1.5rem;
+            margin-top: 1.25rem;
+            border-radius: 0.625rem;
+        }
+        #foto{
+            width: 9.375rem;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div id="divEjercicio"></div>
+    <script>
+        let personas = {
+            roberto: {
+                foto:"IMG20240330110015.jpg",
+                nombre: "Roberto",
+                atributos: {
+                    edad: "28",
+                    email: "robertosarta.rm@gmail.com",
+                    direccion: "C/Diputacion nº11",
+                },
+                eyeColor: "#8B4513"
+            },
+        };
+
+        let nombreBuscado = prompt("Dame un nombre (Roberto para probar ejercicio)").toLowerCase();
+        let div = document.getElementById("divEjercicio");
+
+        if (personas[nombreBuscado]) {
+            let persona = personas[nombreBuscado];
+
+            div.style.backgroundColor = persona.eyeColor;
+            div.innerHTML = `
+            <img src="${persona.foto}" alt="Foto de ${persona.nombre}">
+            <h1>${persona.nombre} </h1>
+            <p>Edad: ${persona.atributos.edad} </p>
+            `
+        }
+    </script>
+</body>
+</html>
