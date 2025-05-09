@@ -4,24 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="./styles/general.css" />
     <style>
-        #divEjercicio{
-            width: 18.75rem; 
-            height: 3.125rem; 
-            text-align: center;
-            line-height: 6.25rem;
-            font-size: 1.5rem;
-            margin-top: 1.25rem;
-            border-radius: 0.625rem;
-        }
-        #foto{
-            width: 9.375rem;
-            border-radius: 50%;
+        img{
+            width: 13rem;
         }
     </style>
 </head>
 <body>
-    <div id="divEjercicio"></div>
+    <div class="content-max">
+        <div class="div-ejercicio">
+            <div id="divEjercicio"></div>
+        </div>
+    </div>
     <script>
         let personas = {
             roberto: {
@@ -34,6 +29,16 @@
                 },
                 eyeColor: "#8B4513"
             },
+            carlos: {
+                foto:"",
+                nombre: "Carlos",
+                atributos: {
+                    edad: "34",
+                    email: "carloscarlitoscarlo@gmail.com",
+                    direccion: "C/Los santos nº12",
+                },
+                eyeColor: "#6495ED"
+            }
         };
 
         let nombreBuscado = prompt("Dame un nombre (Roberto para probar ejercicio)").toLowerCase();
@@ -47,7 +52,12 @@
             <img src="${persona.foto}" alt="Foto de ${persona.nombre}">
             <h1>${persona.nombre} </h1>
             <p>Edad: ${persona.atributos.edad} </p>
+            <p>Email: ${persona.atributos.email} </p>
+            <p>Direccion: ${persona.atributos.direccion} </p>
             `
+        }else {
+            div.innerHTML = `<h2>Persona no encontrada</h2>`;
+            div.style.backgroundColor = "#444";
         }
     </script>
 </body>
