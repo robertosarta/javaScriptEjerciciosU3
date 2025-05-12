@@ -1,4 +1,20 @@
 let personas = {
+  roberto: {
+    picture:"IMG20240330110015.jpg",
+    name: "Roberto",
+    age: "28",
+    email: "robertosarta.rm@gmail.com",
+    address: "C/Diputacion nº11",
+    eyeColor: "#8B4513"
+  },
+  carlos: {
+    picture:"",
+    name: "Carlos",
+    age: "34",
+    email: "carloscarlitoscarlo@gmail.com",
+    address: "C/Los santos nº12",
+    eyeColor: "#6495ED"
+  },
   BridgetteMcGuire: {
     _id: "5d8a48131595639a1e4fa996",
     index: 0,
