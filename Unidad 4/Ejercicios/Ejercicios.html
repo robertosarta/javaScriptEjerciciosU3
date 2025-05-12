@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+        //ARRAYS
+        //Ejercicio 1
+        let frutas = ["manzana","pera","melocoton","chirimoya","sandia","cereza","platano","paraguayo","aguacate","nectarina"]
+        console.log(frutas);
+
+        //Ejercicio 2
+        let miString = [];
+        miString[0] = prompt("Dame valores para mi string primer aviso");
+        miString[1] = prompt("Dame valores para mi string segundo aviso");
+        miString[2] = prompt("Dame valores para mi string tercer aviso");
+
+        console.log(`Tu segundo string era; ${miString[1]}, el tercero ha sido; ${miString[2]} y el primero; ${miString[0]}.` );
+    
+        //Ejercicio 3
+        let string = [];
+        for (let i = 0; i < 10; i++){
+            string[i] = 20 - i;
+        }
+
+        for (let i = 0; i < 10; i++){
+            console.log(string[i]);
+        }
+
+        //Ejercicio 4
+        let valores = [];
+
+        for (let i = 0; i < 10; i++){
+            valores[i] = prompt(`introduce el valor numero ${i + 1}:`);
+        } 
+
+        document.write("<h3>Los valores introducidos son:</h3>");
+        for (let i = 0; i < 10; i++){
+            document.write(`${i + 1}: ${valores[i]}<br>`);
+        }
+        
+        //Ejercicio 5
+        let meses = ["Enero", "Febrero", "Marzo", "Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+        let numero = parseInt(prompt("Introduce un numero del 1 al 12"));
+
+        if (numero >= 1 && numero <=12){
+            document.write(`El mes numero ${numero} es: ${meses[numero - 1]}`);
+        }else {
+            document.write("Numero invalido. Tiene que ser del 1 al 12");
+        }
+
+        //Ejercicio 6
+        let array = [];
+
+        for (let i = 0; i < 3; i++){
+            array[i] = parseFloat(prompt(`Introduce el valor numero ${i + 1}`));
+        }
+
+        let menor = array[0];
+        for (let i = 1; i < 3; i++){
+            if(array[i] < menor){
+                menor = array[i];
+            }
+        }
+
+        document.write(`El valor mas pequeño es: ${menor}`);
+        
+        //Ejercicio 7
+        let array = [1, 3, 8, 5, 8, 75, 6, 20, 96, 2];
+        let suma = 0;
+
+        for (let i = 0; i < array.length; i++){
+            suma += array[i]
+        }
+
+        let media = suma / array.length;
+        window.alert("La media es: " + media);
+        
+        //Ejercicio 8
+        let edades = [];
+
+        for (let i = 0; i < 20; i++){
+            let edad = Math.floor(Math.random() * (35 - 18 +1)) + 18;
+            edades.push(edad);
+        }
+        
+        console.log("edades generadas:", edades);
+        let suma = 0;
+        for(let i = 0; i < edades.length; i++){
+            suma += edades[i];
+        }
+        
+        let media = suma / edades.length;
+        window.alert("La media de edad es:" + media.toFixed(2));
+        
+        //Ejercicio 9
+        let valores = [1, 1, 1, 1, 1, 1, 1, 1, 1, 1];
+        let posicion = parseInt(prompt("Introduce un numero entre 0 y 9"));
+
+        if (posicion >= 0 && posicion < 10){
+            valores[posicion] = valores[posicion] * 2;
+
+            window.alert("Tu numero modificado es: " + valores[posicion])
+            console.log("Array final: " + valores);
+            window.alert("Array final: " + valores.join(", ")); //Esto convierte el array en una cadena de texto para poder mostrarlo tambien por el window.alert que es mas comodo
+        }else {
+            window.alert("Posicion no valida");
+        }
+        
+        //Ejercicio 10
+        let array = Array(11).fill(0);
+        let valor = parseInt(prompt("Introduce un número entre 0 y 10 o un valor negativo para terminar el programa."));
+
+        while (valor >= 0){
+            if (valor <= 10){
+                array[valor]++;
+            }else {
+                window.alert("número no válido");
+            }
+            valor = parseInt(prompt("Introduce otro número (negativo para terminar el programa):"))
+        } 
+
+        console.log("Número\tValor");  // con"\t" se hace un tabulado
+        for (let i = 0; i < array.length; i++){
+            console.log(`${i}\t${array[i]}`);
+        }
+        
+        
+        //OBJETOS
+        //Ejercicio 1
+        let coche = {
+            color: "rojo",
+            marca: "Ford",
+            modelo: "Focus",
+            motor: {
+                cilindros: 4,
+                capacidad: 2.2
+            }
+        };
+
+        //comprobacion
+        console.log(coche);
+        alert("Marca: " + coche.marca);
+        alert("Cilindros: " + coche.motor.cilindros);
+        
+        //Ejercicio 2
+        let roberto = {
+            nombre: "Roberto",
+            edad: "28",
+        };
+
+        alert(JSON.stringify(roberto, null, 2)); //Con stringify convierte el objeto a cadena de texto y despues con null no reemplazamos nada y con 2 le damos espaciado por nivel
+        console.log(JSON.parse(JSON.stringify(roberto))); //Estos añadidos servian para mostrar el objeto en ese momento exacto, si no firefox muestra el objeto acualizado independientemente del momento del console.log
+        roberto.altura = "1.71";
+        alert(JSON.stringify(roberto, null, 2));
+        console.log(roberto);
+        
+        //Ejercicio 3
+        //Lo hice en un documento aparte porque no estaba muy seguro de como introducirlo aqui con el resto :(
+
+        //Ejercicio 4
+        let name = prompt("Introduce tu nombre:")
+        let randomObject = {
+            ordenador: {
+                cpu: "i5",
+                ram: "16GB",
+                board: "broken"
+            },
+            perifericos: {
+                auriculares: "JBL",
+                raton: "Forgeon",
+                teclado: "logitech"
+            }
+        }; 
+
+        window.alert(randomObject.ordenador.board);
+        randomObject.ordenador.name = name;
+        window.alert(JSON.stringify(randomObject, null, 2));
+        console.log(randomObject);
+        
+        //Ejercicio 5
+        let año = prompt("En que año naciste?");
+        let nombre = prompt("Cual es tu nombre?");
+        let apellido = prompt("Y por ultimo cual es tu apellido?");
+        let genero = prompt(`Elige "masculino" o "femenino"`);
+
+        let letraNombre = {
+            A: "Vendaval",
+            B: "Fuego",
+            C: "Veneno",
+            D: "Luz",
+            E: "Madera",
+            F: "Bosque",
+            G: "Gamusino",
+            H: "Vision",
+            I: "Tralarilo",
+            J: "Bombardiro",
+            K: "plasma",
+            L: "Juez",
+            M: "Jurado",
+            N: "Verdugo",
+            Ñ: "Estela",
+            O: "Destruye",
+            P: "Creacion",
+            Q: "Elementalista",
+            R: "Arcano",
+            S: "Sello", 
+            T: "Sombra", 
+            U: "Rayo",
+            V: "Viento",
+            W: "Hielo", 
+            X: "Programa", 
+            Y: "Luz", 
+            Z: "Vacio",
+        };
+        let letraApellido = {
+            a: "Oscuro",
+            b: "Primigenio",
+            c: "Veloz",
+            d: "Inexorable",
+            e: "Invisible",
+            f: "Radiante",
+            g: "Cegador",
+            h: "Siniestro",
+            i: "Impasible",
+            j: "Redentor",
+            k: "Armado",
+            l: "Del pasado",
+            m: "Del futuro",
+            n: "Desaparecido",
+            ñ: "Supersónico",
+            o: "Ambulante",
+            p: "Letal",
+            q: "Explosivo",
+            r: "Soberano",
+            s: "Supremo",
+            t: "Demoniaco",
+            u: "Angelical",
+            v: "Infernal",
+            w: "Del monton",
+            x: "Maravilla",
+            y: "Impetuoso",
+            z: "Fantasmal"
+        }
+        let numeroAño = {
+            0: "Del infinito",
+            1: "Del caos",
+            2: "Del mas allá",
+            3: "Del espacio",
+            4: "De la singularidad",
+            5: "Del poder oscuro",
+            6: "Del dragon",
+            7: "De la noche",
+            8: "Del trueno",
+            9: "Iluminado",
+        };
+
+        let primeraLetra = nombre.charAt(0).toUpperCase();
+        let ultimaLetra = apellido.charAt(apellido.length - 1).toLowerCase();
+        let ultimoNumero = año.charAt(año.length - 1);
+
+        let parte1 = letraNombre[primeraLetra] || "Tung Tung";
+        let parte2 = letraApellido[ultimaLetra] || "Tung";
+        let parte3 = numeroAño[ultimoNumero] || "Sahur";
+        let prefijo = (genero.toLowerCase() === "femenino")? "La" : "El";
+
+        let nombreSuper = `${prefijo} ${parte1} ${parte2} ${parte3}`;
+        alert("Tu nombre de super es: " + nombreSuper);
+        */
+        //Ejercicio 6
+        //Lo hice en un documento aparte porque no estaba muy seguro de como introducirlo aqui con el resto :(
+        //Ejercicio 7
+        //Lo hice en un documento aparte porque no estaba muy seguro de como introducirlo aqui con el resto :(
+    </script>
+</body>
+</html>
