@@ -17,14 +17,14 @@ let sistemaSolar = {
     color: "morado",
     temperatura: 14,
     imagen:
-      "https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/article/5a0ab2a75bafe87f4d3f9a63/acaba-tiempo_0.jpg",
+      "https://upload.wikimedia.org/wikipedia/commons/9/97/The_Earth_seen_from_Apollo_17.jpg",
   },
   marte: {
     nombre: "marte",
     color: "rojo",
     temperatura: -46,
     imagen:
-      "https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/article/55365b6b34099b0279c8fb2e/slide-marte.jpg",
+      "https://discoverexperience.com/wp-content/uploads/2022/11/Marte-1.jpg",
   },
   jupiter: {
     nombre: "jupiter",
@@ -38,7 +38,7 @@ let sistemaSolar = {
     color: "amarillo",
     temperatura: -130,
     imagen:
-      "https://estaticos.muyinteresante.es/media/cache/760x570_thumb/uploads/images/article/558d2b15010e26221b57df75/saturno.jpg",
+      "https://services.meteored.com/img/article/confirmo-nasa-2025-anillos-saturno-desapareceran-vista-tierra-cassini-equinoccio-1699783037789_512.jpeg",
   },
   urano: {
     nombre: "urano",
@@ -58,6 +58,6 @@ let sistemaSolar = {
     color: "blanco",
     temperatura: -229,
     imagen:
-      "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Nh-pluto-in-true-color_2x_JPEG.jpg/1200px-Nh-pluto-in-true-color_2x_JPEG.jpg",
+      "https://static.nationalgeographic.es/files/styles/image_3200/public/03pluto.jpg?w=1900&h=1314",
   },
 };

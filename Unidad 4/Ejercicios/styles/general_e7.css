@@ -1,0 +1,45 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content-max {
+    width: 100rem;
+    margin: 0 auto;
+}
+
+.flex-general{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+}
+
+.card{
+    padding: 1rem;
+    background-color: #393939;
+    border: solid 0.15rem #1a1a1a;
+    border-radius: 0.5rem;
+    width: 14.8rem;
+    box-shadow: 0 0.125rem 0.3125rem rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.imagen-container{
+    border-radius: 0.5rem;
+    overflow: hidden;
+    width: 100%;
+    height: 12.4rem;
+}
+.imagen{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-bottom: 0.75rem;
+}
+
+.font-white {
+    color: white;
+}
