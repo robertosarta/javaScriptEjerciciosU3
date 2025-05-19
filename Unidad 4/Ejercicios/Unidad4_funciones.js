@@ -51,3 +51,21 @@ if (comparacion === true){
     console.log("El primer numero no es mas grande")
 }
 */
+//Ejercicio 6
+//Esta en .html
+
+//Ejercicio 7
+let num1 = prompt(Number("Dame un numero y te digo si es par o no."));
+
+function esPar(num){
+    if (num % 2 === 0){
+        window.alert("Tu numero es par");
+    }else{
+        window.alert("Tu numero es impar");
+    }
+}
+
+esPar(num1)
+
+
+
