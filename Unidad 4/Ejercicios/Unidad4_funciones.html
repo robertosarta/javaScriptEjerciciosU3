@@ -54,8 +54,101 @@
 
         let resultadoFinal = factorial(valor);
         window.alert(`el resultado de tu factorial es ${resultadoFinal}`);
-        */
-       
+        
+        //Ejercicio 9
+        function contar(numero){
+            numero = numero.toString();
+            numUserString = numero.length;
+            return numUserString;
+        }
+        let numUser;
+        let numUserString;
+
+        do {
+            numUser = Math.floor(prompt("Dame un numero, sin decimales por favor de lo contrario se los quitare yo mismo redondeandolo"));
+            if (numUser < 0 || isNaN(numUser)){
+                window.alert("Tu numero es negativo, no me sirve. Vuelve a intentarlo pero con uno positivo esta vez");
+            }
+        } while (numUser < 0);
+
+        alert(`Tu numero tenia ${contar(numUser)} cifras.`);
+        
+        //Ejercicio 10 
+        function areaCirculo(radio) {
+            return (radio * radio) * Math.PI
+        };
+        function areaCuadrado(lado) {
+            return lado * lado
+        };
+        function areaTriangulo(base, altura) {
+            return (base * altura) / 2
+        };
+
+        let eleccion = Number(prompt(`De que te gustaria calcular el area? elige "1, 2 o 3"; \n1 - Circulo \n2 - Cuadrado \n3 - Triangulo`));
+        do {
+            window.alert("No has introducido un número de la lista, prueba otra vez");
+            eleccion = Number(prompt(`De que te gustaria calcular el area? elige "1, 2 o 3"; \n1 - Circulo \n2 - Cuadrado \n3 - Triangulo`));
+        } while (eleccion !== 1 && eleccion !== 2 && eleccion !== 3);
+
+        switch (eleccion) {
+                case 1:
+                    let radio = Number(prompt("Dime cual es el radio de tu circulo"));
+                    window.alert(`Tu área es: ${areaCirculo(radio).toFixed(2)}`);
+                    break;
+                case 2:
+                    let lado = Number(prompt("¿Cuanto mide un lado de tu cuadrado?"));
+                    window.alert(`Tu área es: ${areaCuadrado(lado).toFixed(2)}`);
+                    break;
+                case 3:
+                    let base = Number(prompt("¿Cuanto mide la base de tu triangulo?"));
+                    let altura= Number(prompt("¿Cuanto mide de alto tu triangulo?"));
+                    window.alert(`El área de tu triangulo es: ${areaTriangulo(base, altura).toFixed(2)}`);
+                    break;
+            }
+            
+        //Ejercicio 11
+        let resultado;
+        function comprobacionMoneda(moneda) {
+            if (moneda === "1" || moneda.toLowerCase() === "libras"){
+            return "libras";
+                }else if (moneda === "2" || moneda.toLowerCase() === "dolares"){
+                    return "dolares";
+                }else if (moneda === "3" || moneda.toLowerCase() === "yenes"){
+                    return "yenes";
+                }
+        }
+        function conversion(euro, moneda) {
+            switch (moneda.toLowerCase()) {
+                case "libras":
+                    resultado = euro * 0.86;
+                    window.alert(`${euro}€ son ${resultado} libras`);
+                    break;
+                case "dolares":
+                    resultado = euro * 1.28611;
+                    window.alert(`${euro}€ son ${resultado}$`);
+                    break;
+                case "yenes":
+                    resultado= euro * 129.852;
+                    window.alert(`${euro}€ son ${resultado} yenes`);
+                    break;
+                default:
+                    window.alert("Has introducido una moneda no valida");
+            }
+        }
+        
+        let euro = Number(prompt(`¿Cuantos "€" quieres convertir?`));
+
+        let moneda = prompt("¿A que moneda te gustaria convertirlo: \n1 - Libras \n2 - Dolares \n3 - yenes");
+        moneda = comprobacionMoneda(moneda);
+        while (moneda !== "libras" && moneda !== "dolares" && moneda !== "yenes") {
+            moneda = prompt("Parece que has introducido un valor invalido, prueba otra vez! ¿A que moneda te gustaria convertirlo: \n1 - Libras \n2 - Dolares \n3 - yenes");
+            moneda = comprobacionMoneda(moneda);
+        }
+
+        conversion(euro, moneda);
+    */
+        //Ejercicio 12
+        
     </script>
 </body>
 </html>

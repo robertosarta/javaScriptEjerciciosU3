@@ -55,17 +55,11 @@ if (comparacion === true){
 //Esta en .html
 
 //Ejercicio 7
-let num1 = prompt(Number("Dame un numero y te digo si es par o no."));
+//Esta en .html
 
-function esPar(num){
-    if (num % 2 === 0){
-        window.alert("Tu numero es par");
-    }else{
-        window.alert("Tu numero es impar");
-    }
-}
+//Ejercicio 8
+//Esta en .html
 
-esPar(num1)
 
 
 
