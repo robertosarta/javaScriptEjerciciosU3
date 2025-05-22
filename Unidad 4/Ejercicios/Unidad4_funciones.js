@@ -50,7 +50,7 @@ if (comparacion === true){
 }else {
     console.log("El primer numero no es mas grande")
 }
-*/
+
 //Ejercicio 6
 //Esta en .html
 
@@ -60,6 +60,33 @@ if (comparacion === true){
 //Ejercicio 8
 //Esta en .html
 
+//EXTRAS
+//Ejercicio 1
+    function temporizador(segundos,callback) {
+        setTimeout(() => {
+            callback();
+        }, segundos);
+    }
+    function saludar(nombre) {
+        console.log(`hola buenas ${nombre}`);
+    }
 
+    temporizador(5000, () => saludar("Roberto"));
+*/
+//Ejercicio 2
+function descargarDatos(datos) {
+    return new Promise ((resolve, reject) => {
+        setTimeout(() => {
+            let exito = Math.random() >= 0.3;
+            if (exito) {
+                resolve("datos descargados exitosamente");
+            }else {
+                reject("Error al descargar los datos");
+            }
+        }, 2000);
+    })
+}
 
-
+descargarDatos()
+.then(mensaje => {console.log(mensaje)})
+.catch(error => {console.log(error)});

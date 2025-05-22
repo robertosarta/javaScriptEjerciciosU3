@@ -7,7 +7,7 @@
 </head>
 <body>
     <script>
-        /*
+        
         //Ejercicio 6
         let num1;
         let num2;
@@ -28,7 +28,7 @@
         window.alert(division());
         
 
-
+/*
         //Ejercicio 7
         function esPar(num){
             if (num % 2 === 0){
@@ -146,9 +146,31 @@
         }
 
         conversion(euro, moneda);
-    */
+    
         //Ejercicio 12
-        
+        let año;
+        function bisiesto(año) {
+            if ((año % 4 === 0) && ((año % 100 !== 0) || (año % 400 === 0))){
+                return true
+            }else{
+                return false
+            }
+        }
+
+        while (año !== 0) {
+            año = Number(prompt(`Dime un año y te dire si es bisiesto o no, si introduces "0" se acabara el programa.`));
+            if (año === 0){
+                alert("El programa acaba aqui");
+                break;
+            }
+            let esBisiesto = bisiesto(año);            
+            if (esBisiesto === true){
+                alert("Tu año es bisiesto");
+            }else if (esBisiesto === false){
+                alert("Tu año no es bisiesto");
+            }
+        }
+        */
     </script>
 </body>
 </html>
