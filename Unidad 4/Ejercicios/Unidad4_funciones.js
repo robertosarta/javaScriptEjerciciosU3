@@ -72,9 +72,9 @@ if (comparacion === true){
     }
 
     temporizador(5000, () => saludar("Roberto"));
-*/
+
 //Ejercicio 2
-function descargarDatos(datos) {
+function descargarDatos() {
     return new Promise ((resolve, reject) => {
         setTimeout(() => {
             let exito = Math.random() >= 0.3;
@@ -90,3 +90,63 @@ function descargarDatos(datos) {
 descargarDatos()
 .then(mensaje => {console.log(mensaje)})
 .catch(error => {console.log(error)});
+
+//Ejercicio 3
+console.log("Consigue un total de 10!");
+let resultado;
+function operacion1(a, b) {
+    resultado = (a + b);
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (resultado === 10){
+                resolve("Felicidades, has conseguido un resultado de 10");
+            }else {
+                reject(`Lo sentimos, su resultado da un total de ${resultado}`);
+            }
+        }, 1000);
+    })
+}
+
+function operacion2(a, b) {
+    resultado = (a * b);
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (resultado === 10){
+                resolve("Felicidades, has conseguido un resultado de 10");
+            }else {
+                reject(`Lo sentimos, su resultado da un total de ${resultado}`);
+            }
+        }, 1000);
+    })
+}
+
+function operacion3(a, b) {
+    resultado = (a / b);
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (resultado === 10){
+                resolve("Felicidades, has conseguido un resultado de 10");
+            }else {
+                reject(`Lo sentimos, su resultado da un total de ${resultado}`);
+            }
+        }, 1000);
+    })
+}
+//Aqui no super como hacer que si fallaban la primera o la segunda siguiese ejecutandose, en cuanto una fallaba paraba.
+operacion1(5, 5)
+.then(mensaje => {
+    console.log("operacion 1:", mensaje);
+    return operacion2(2, 5);
+})
+.then(mensaje => {
+    console.log("Operacion 2:", mensaje);
+    return operacion3(10, 10);
+})
+.then(mensaje => {
+    console.log("Operacion 3:", mensaje);
+})
+.catch(error => {
+    console.log("error:", error)
+});
+*/
+//Ejercicio 4
