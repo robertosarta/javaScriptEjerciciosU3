@@ -148,5 +148,25 @@ operacion1(5, 5)
 .catch(error => {
     console.log("error:", error)
 });
-*/
+
 //Ejercicio 4
+function leerArchivo(nombreArchivo) {
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (nombreArchivo){
+                resolve(`Contenido del archivo: ${nombreArchivo}`);
+            }else{
+                reject(`No se proporcionó un nombre de archivo`);
+            }
+        }, 1000);
+    })
+}
+
+leerArchivo("archivo.txt")
+.then(mensaje => {
+    console.log(mensaje);
+})
+.catch(error => {
+    console.log("Ha habido un error:", error)
+});
+*/
