@@ -1,0 +1,14 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.content-max {
+    width: 100rem;
+    margin: 0 auto;
+}
+
+.card {
+    cursor: pointer;
+    border: solid 0.05rem #0B0514;
+}
