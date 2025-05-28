@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content"></div>
+
+    <script> 
+        const titulo = document.createElement("h1");
+        titulo.textContent = "Hola mundo, este es mi titulo";
+        titulo.style.color = "red";
+
+        const parrafo = document.createElement("P");
+        parrafo.textContent = "y este es mi parrafo";
+        parrafo.style.color = "grey";
+
+        const content = document.querySelector(".content");
+        content.appendChild(titulo);
+        titulo.appendChild(parrafo);
+    </script>
+</body>
+</html>

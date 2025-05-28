@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+</head>
+<body>
+    <h2>VERIFICADOR DE EDAD</h2>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" />
+
+    <label for="edad">Edad:</label>
+    <input type="text" id="edad" />
+
+    <button onclick="edadif()">Verificar con IF</button>
+    <button onclick="edadswitch()">verificar con SWITCH</button>
+    <button onclick="edadternario()">verificar con TERNARIO</button>
+
+    <div class="content"></div>
+    
+    <script>
+    function limpiar() {
+        document.querySelector(".content").textContent = "";
+    }
+
+    function edadif() {
+        const nombre = document.getElementById("nombre").value;
+        const edad = Number(document.getElementById("edad").value);
+        const resultado = document.createElement("p");
+        let mensaje, color;
+
+        if (edad < 18) {
+        mensaje = `Hola, ${nombre} eres menor de edad`;
+        color = "red";
+        } else if (edad >= 18) {
+        mensaje = `Hola, ${nombre} eres mayor de edad`;
+        color = "green";
+        } else {
+        mensaje = "introduce un valor valido por favor";
+        }
+
+        limpiar();
+        const content = document.querySelector(".content");
+        resultado.textContent = mensaje;
+        content.style.color = color;
+        content.appendChild(resultado);
+    }
+
+    function edadswitch() {
+        const nombre = document.getElementById("nombre").value;
+        const edad = Number(document.getElementById("edad").value);
+        const resultado = document.createElement("p");
+        let mensaje, color;
+
+        switch (true) {
+        case edad < 18:
+            mensaje = `Hola, ${nombre} eres menor de edad`;
+            color = "red";
+            break;
+        case edad >= 18:
+            mensaje = `Hola, ${nombre} eres mayor de edad`;
+            color = "green";
+            break;
+        default:
+            mensaje = "introduce un valor valido por favor";
+            break;
+        }
+
+        limpiar();
+        const content = document.querySelector(".content");
+        resultado.textContent = mensaje;
+        content.style.color = color;
+        content.appendChild(resultado);
+    }
+
+    function edadternario() {
+        const nombre = document.getElementById("nombre").value;
+        const edad = Number(document.getElementById("edad").value);
+        const resultado = document.createElement("p");
+        let mensaje, color;
+
+        mensaje = edad < 18 ? `Hola, ${nombre} eres menor de edad` : `Hola, ${nombre} eres mayor de edad`;
+        color = edad < 18 ? "red" : "green";
+
+        limpiar();
+        const content = document.querySelector(".content");
+        resultado.textContent = mensaje;
+        content.style.color = color;
+        content.appendChild(resultado);
+    }
+    </script>
+</body>
+</html>

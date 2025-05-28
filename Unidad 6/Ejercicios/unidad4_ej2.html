@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p class="content"></p>
+    
+    <script>
+        let nombre = "Roberto";
+        const parrafo = document.createElement("p");
+        parrafo.textContent = `Hola, me llamo ${nombre}`;
+        
+        const content = document.querySelector(".content");
+        content.appendChild(parrafo);
+    </script>
+</body>
+</html>

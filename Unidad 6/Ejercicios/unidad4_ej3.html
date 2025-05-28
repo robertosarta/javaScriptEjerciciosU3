@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>VERIFICADOR DE EDAD</h2>
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre">
+
+    <label for="edad">Edad:</label>
+    <input type="text"  id="edad">
+
+    <button onclick="edadif()">Verificar con IF</button>
+    <button onclick="edadswitch()">verificar con SWITCH</button>
+    <button onclick="edadternario()">verificar con TERNARIO</button>
+    
+    <div class="content"></div>
+
+
+    <script>
+        let mensaje;
+
+        function edadif() {
+            const nombre = document.getElementById("nombre").value;
+            const edad = Number(document.getElementById("edad").value);
+        if (edad < 18){
+            mensaje = `Hola, ${nombre} eres menor de edad`
+        }else if (edad >= 18){
+            mensaje = `Hola, ${nombre} eres mayor de edad`
+        }else{
+            mensaje = "introduce un valor valido por favor"
+        }
+        document.querySelector(".content").textContent = mensaje;
+        }
+
+        function edadswitch() {
+            const nombre = document.getElementById("nombre").value;
+            const edad = Number(document.getElementById("edad").value);
+
+            switch (true) {
+            case (edad < 18):
+                return mensaje = `Hola, ${nombre} eres menor de edad`
+                break;
+            case (edad >= 18):
+                return mensaje = `Hola, ${nombre} eres mayor de edad`
+                break;
+            default:
+                return mensaje = "introduce un valor valido por favor"
+                break;
+        }
+        document.querySelector(".content").textContent = mensaje;
+        }
+
+        function edadternario() {
+            const nombre = document.getElementById("nombre").value;
+            const edad = Number(document.getElementById("edad").value);
+            let mensaje = edad < 18 ? `Hola, ${nombre} eres menor de edad` : `Hola, ${nombre} eres mayor de edad`;
+            document.querySelector(".content").textContent = mensaje;
+        }
+    </script>
+</body>
+</html>
