@@ -21,31 +21,66 @@
             boton.onclick = funcion;
             return boton;
         }
-
         contenidoEjercicio.appendChild(crearBoton("suma", suma));
         contenidoEjercicio.appendChild(crearBoton("resta", resta));
         contenidoEjercicio.appendChild(crearBoton("multiplicacion", multiplicacion));
         contenidoEjercicio.appendChild(crearBoton("division", division));
         contenidoEjercicio.appendChild(crearBoton("resto", resto));
 
-        //
         function suma(a, b) {
             content.removeChild(contenidoEjercicio);
+            let num1 = Number(window.prompt("Dime un primer operando")); 
+            let num2 = Number(window.prompt("Dime un segundo operando")); 
 
-
-            const numero1 = Number(document.getElementById("numero1").value);
-            const numero2 = Number(document.getElementById("numero2").value);
-            const operaciones = document.querySelector(".operaciones");
-            let resultado = document.getElementById("resultado-suma");
-            
-            if(!resultado){
-                resultado = document.createElement("p");
-                resultado.id = "resultado-suma";
-                operaciones.appendChild(resultado);
-            }
-            resultado.textContent = `Suma: ${numero1 + numero2}`;
-            resultado.style.color = " #9ccc65";
+            let resultado = document.createElement("p");
+            resultado.textContent = `Suma de ${num1} + ${num2} = ${num1 + num2}`;
+            resultado.style.color = "#9ccc65";
             resultado.style.backgroundColor = "black";
+            content.appendChild(resultado);
+        }
+        function resta(a, b) {
+            content.removeChild(contenidoEjercicio);
+            let num1 = Number(window.prompt("Dime un primer operando")); 
+            let num2 = Number(window.prompt("Dime un segundo operando")); 
+
+            let resultado = document.createElement("p");
+            resultado.textContent = `Resta de ${num1} - ${num2} = ${num1 - num2}`;
+            resultado.style.color = "#9ccc65";
+            resultado.style.backgroundColor = "black";
+            content.appendChild(resultado);
+        }
+        function multiplicacion(a, b) {
+            content.removeChild(contenidoEjercicio);
+            let num1 = Number(window.prompt("Dime un primer operando")); 
+            let num2 = Number(window.prompt("Dime un segundo operando")); 
+
+            let resultado = document.createElement("p");
+            resultado.textContent = `Multiplicación de ${num1} * ${num2} = ${num1 * num2}`;
+            resultado.style.color = "#9ccc65";
+            resultado.style.backgroundColor = "black";
+            content.appendChild(resultado);
+        }
+        function division(a, b) {
+            content.removeChild(contenidoEjercicio);
+            let num1 = Number(window.prompt("Dime un primer operando")); 
+            let num2 = Number(window.prompt("Dime un segundo operando")); 
+
+            let resultado = document.createElement("p");
+            resultado.textContent = `División de ${num1} / ${num2} = ${num1 / num2}`;
+            resultado.style.color = "#9ccc65";
+            resultado.style.backgroundColor = "black";
+            content.appendChild(resultado);
+        }
+        function resto(a, b) {
+            content.removeChild(contenidoEjercicio);
+            let num1 = Number(window.prompt("Dime un primer operando")); 
+            let num2 = Number(window.prompt("Dime un segundo operando")); 
+
+            let resultado = document.createElement("p");
+            resultado.textContent = `Resto de ${num1} % ${num2} = ${num1 % num2}`;
+            resultado.style.color = "#9ccc65";
+            resultado.style.backgroundColor = "black";
+            content.appendChild(resultado);
         }
     </script>
 </body>
