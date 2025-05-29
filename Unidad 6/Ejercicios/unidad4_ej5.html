@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>OPERACIONES</h1>
+    <h2>Dame 2 numeros y te mostrare el resultado de la suma, resta, multiplicación, división y el resto que conseguimos con ellos:</h2>
+    <label for="numero1">Primer numero</label>
+    <input type="number" id="numero1"/>
+    
+    <label for="numero2">Segundo numero</label>
+    <input type="number" id="numero2"/> 
+
+    <button onclick="sumar()">sumar</button>
+    <button onclick="restar()">restar</button>
+    <button onclick="multiplicar()">multiplicar</button>
+    <button onclick="dividir()">dividir</button>
+    <button onclick="resto()">resto</button>
+    <div class="operaciones"></div>
+
+    <script>
+        function sumar(a, b) {
+            const numero1 = Number(document.getElementById("numero1").value);
+            const numero2 = Number(document.getElementById("numero2").value);
+            const operaciones = document.querySelector(".operaciones");
+            let resultado = document.getElementById("resultado-suma");
+            
+            if(!resultado){
+                resultado = document.createElement("p");
+                resultado.id = "resultado-suma";
+                operaciones.appendChild(resultado);
+            }
+            resultado.textContent = `Suma: ${numero1 + numero2}`;
+            resultado.style.color = " #9ccc65";
+            resultado.style.backgroundColor = "black";
+        }
+
+        function restar(a, b) {
+            const numero1 = Number(document.getElementById("numero1").value);
+            const numero2 = Number(document.getElementById("numero2").value);
+            const operaciones = document.querySelector(".operaciones");
+            let resultado = document.getElementById("resultado-resta");
+            
+            if(!resultado){
+                resultado = document.createElement("p");
+                resultado.id = "resultado-resta";
+                operaciones.appendChild(resultado);
+            }
+            resultado.textContent = `Resta: ${numero1 - numero2}`;
+            resultado.style.color = "black";
+            resultado.style.backgroundColor = "red";
+        }
+
+        function multiplicar(a, b) {
+            const numero1 = Number(document.getElementById("numero1").value);
+            const numero2 = Number(document.getElementById("numero2").value);
+            const operaciones = document.querySelector(".operaciones");
+            let resultado = document.getElementById("resultado-multiplicacion");
+            
+            if(!resultado){
+                resultado = document.createElement("p");
+                resultado.id = "resultado-multiplicacion";
+                operaciones.appendChild(resultado);
+            }
+            resultado.textContent = `Multiplicación: ${numero1 * numero2}`;
+            resultado.style.color = "white";
+            resultado.style.backgroundColor = " #ffc107";
+        }
+
+        function dividir(a, b) {
+            const numero1 = Number(document.getElementById("numero1").value);
+            const numero2 = Number(document.getElementById("numero2").value);
+            const operaciones = document.querySelector(".operaciones");
+            let resultado = document.getElementById("resultado-division");
+            
+            if(!resultado){
+                resultado = document.createElement("p");
+                resultado.id = "resultado-division";
+                operaciones.appendChild(resultado);
+            }
+            resultado.textContent = `División: ${numero1 / numero2}`;
+            resultado.style.color = "#00bcd4";
+            resultado.style.backgroundColor = " #424242";
+        }
+
+        function resto(a, b) {
+            const numero1 = Number(document.getElementById("numero1").value);
+            const numero2 = Number(document.getElementById("numero2").value);
+            const operaciones = document.querySelector(".operaciones");
+            let resultado = document.getElementById("resultado-resto");
+            
+            if(!resultado){
+                resultado = document.createElement("p");
+                resultado.id = "resultado-resto";
+                operaciones.appendChild(resultado);
+            }
+            resultado.textContent = `Resto: ${numero1 - numero2}`;
+            resultado.style.color = "#f4511e";
+            resultado.style.backgroundColor = "#ffeb3b";
+        }
+    </script>
+</body>
+</html>

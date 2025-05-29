@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="content"></div>
+    <script>
+        const content = document.querySelector(".content");
+        const contenidoEjercicio = document.createElement("div");
+        const pregunta = document.createElement("p");
+        pregunta.textContent = "¿Que operación deseas realizar?";
+        content.appendChild(contenidoEjercicio);
+        contenidoEjercicio.appendChild(pregunta)
+
+        function crearBoton(texto, funcion){
+            const boton = document.createElement("button");
+            boton.textContent = texto;
+            boton.onclick = funcion;
+            return boton;
+        }
+
+        contenidoEjercicio.appendChild(crearBoton("suma", suma));
+        contenidoEjercicio.appendChild(crearBoton("resta", resta));
+        contenidoEjercicio.appendChild(crearBoton("multiplicacion", multiplicacion));
+        contenidoEjercicio.appendChild(crearBoton("division", division));
+        contenidoEjercicio.appendChild(crearBoton("resto", resto));
+
+        //
+        function suma(a, b) {
+            content.removeChild(contenidoEjercicio);
+
+
+            const numero1 = Number(document.getElementById("numero1").value);
+            const numero2 = Number(document.getElementById("numero2").value);
+            const operaciones = document.querySelector(".operaciones");
+            let resultado = document.getElementById("resultado-suma");
+            
+            if(!resultado){
+                resultado = document.createElement("p");
+                resultado.id = "resultado-suma";
+                operaciones.appendChild(resultado);
+            }
+            resultado.textContent = `Suma: ${numero1 + numero2}`;
+            resultado.style.color = " #9ccc65";
+            resultado.style.backgroundColor = "black";
+        }
+    </script>
+</body>
+</html>
