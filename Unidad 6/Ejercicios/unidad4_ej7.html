@@ -11,31 +11,20 @@
     <script>
         const content = document.querySelector(".content");
 
-        const divHeader = document.createElement("div");
-        divHeader.className = "header";
-        const aLogo = document.createElement("a");
-        aLogo.className = "logo";
-        aLogo.href = "#default";
-        aLogo.textContent = "RM";
-        const divHeaderRight = document.createElement("div");
-        divHeaderRight.className = "header-right";
-        const aHome = document.createElement("a");
-        aHome.href = "#home";
-        aHome.textContent = "Home";
-        const aContact = document.createElement("a");
-        aContact.href = "#contact";
-        aContact.textContent = "Contact";
-        const aAbout = document.createElement("a");
-        aAbout.href = "#about";
-        aAbout.textContent = "Content";
-
-        //**************************************
-        function name(nombre, elemento, clase, href, textContent) {
-            const nombre = document.createElement(elemento);
-            nombre.className = (clase);
-            
+        function crearElementos(tipo, clase, href, textContent) {
+            const nombre = document.createElement(tipo);
+            if (clase) nombre.className = (clase);
+            if (href) nombre.href = (href);
+            if (textContent) nombre.textContent = textContent;
+            return nombre;
         }
-        //****************************************
+        
+        const divHeader = crearElementos("div", "header");
+        const aLogo = crearElementos("a", "logo", "#default", "RM");
+        const divHeaderRight = crearElementos("div", "header-right");
+        const aHome = crearElementos("a", "header-right", "#home", "Home");
+        const aContact = crearElementos("a", null, "#contact", "Contact");
+        const aAbout = crearElementos("a", null, "#about", "About");
 
         content.appendChild(divHeader);
         divHeader.appendChild(aLogo);
