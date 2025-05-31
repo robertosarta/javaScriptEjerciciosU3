@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="unidad4_ej7.css">
+</head>
+<body>
+    <div class="content"></div>
+    <script>
+        const content = document.querySelector(".content");
+
+        const divHeader = document.createElement("div");
+        divHeader.className = "header";
+        const aLogo = document.createElement("a");
+        aLogo.className = "logo";
+        aLogo.href = "#default";
+        aLogo.textContent = "RM";
+        const divHeaderRight = document.createElement("div");
+        divHeaderRight.className = "header-right";
+        const aHome = document.createElement("a");
+        aHome.href = "#home";
+        aHome.textContent = "Home";
+        const aContact = document.createElement("a");
+        aContact.href = "#contact";
+        aContact.textContent = "Contact";
+        const aAbout = document.createElement("a");
+        aAbout.href = "#about";
+        aAbout.textContent = "Content";
+
+        //**************************************
+        function name(nombre, elemento, clase, href, textContent) {
+            const nombre = document.createElement(elemento);
+            nombre.className = (clase);
+            
+        }
+        //****************************************
+
+        content.appendChild(divHeader);
+        divHeader.appendChild(aLogo);
+        divHeader.appendChild(divHeaderRight);
+        divHeaderRight.appendChild(aHome);
+        divHeaderRight.appendChild(aContact);
+        divHeaderRight.appendChild(aAbout);
+    </script>
+</body>
+</html>
