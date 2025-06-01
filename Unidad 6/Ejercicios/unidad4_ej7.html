@@ -8,13 +8,6 @@
 </head>
 <body>
     <div class="content"></div>
-    <main>
-        <div></div>
-        <div></div>
-        <div></div>
-    </main>
-
-    <footer></footer>
     
     <script>
         const content = document.querySelector(".content");
@@ -49,10 +42,15 @@
         const col1_img1 = crearElementos("img", null, null, null, "https://i.pinimg.com/736x/e7/73/b2/e773b2ce5f7bce02eb5a635e72eb8a8c.jpg");
         const col1_img2 = crearElementos("img", null, null, null, "https://i.pinimg.com/736x/12/c8/ee/12c8ee356fbe577be1ef9f0c7af7cd1e.jpg");
         const col1_img3 = crearElementos("img", null, null, null, "https://i.pinimg.com/736x/a9/91/b5/a991b566f2277f5b39a385bdd5444829.jpg");
-        const col2 = crearElementos("div","column");
+        const col2 = crearElementos("div", "column");
         const col2_img1 = crearElementos("img", null, null, null, "https://i.pinimg.com/736x/98/73/96/987396f552b31f18e042a95b675f36bf.jpg");
         const col2_img2 = crearElementos("img", null, null, null, "https://i.pinimg.com/736x/07/17/63/0717633c7b4cf7fc3339952cbc913797.jpg");
-
+        const col2_img3 = crearElementos("img", null, null, null, "https://i.pinimg.com/736x/c8/91/76/c891768e51459e3f83d566d4da579cf1.jpg");
+        const col3 = crearElementos("div", "column");
+        const col3_img1 = crearElementos("img", null, null, null, "https://i.pinimg.com/736x/3c/ba/d3/3cbad395f3d2bda945d7dc6711d2ff76.jpg");
+        const col3_img2 = crearElementos("img", null, null, null, "https://i.pinimg.com/736x/3c/ba/d3/3cbad395f3d2bda945d7dc6711d2ff76.jpg");
+        const col3_img3 = crearElementos("img", null, null, null, "https://i.pinimg.com/736x/87/56/e4/8756e47710441136712e498a3f8e5ce0.jpg");
+        
         content.appendChild(divMain);
         divMain.appendChild(col1);
         col1.appendChild(col1_img1);
@@ -61,6 +59,11 @@
         divMain.appendChild(col2);
         col2.appendChild(col2_img1);
         col2.appendChild(col2_img2);
+        col2.appendChild(col2_img3);
+        divMain.appendChild(col3);
+        col3.appendChild(col3_img1);
+        col3.appendChild(col3_img2);
+        col3.appendChild(col3_img3);
 
 
 
