@@ -8,17 +8,27 @@
 </head>
 <body>
     <div class="content"></div>
+    <main>
+        <div></div>
+        <div></div>
+        <div></div>
+    </main>
+
+    <footer></footer>
+    
     <script>
         const content = document.querySelector(".content");
 
-        function crearElementos(tipo, clase, href, textContent) {
+        function crearElementos(tipo, clase, href, textContent, src) {
             const nombre = document.createElement(tipo);
             if (clase) nombre.className = (clase);
             if (href) nombre.href = (href);
             if (textContent) nombre.textContent = textContent;
+            if (src) nombre.src = (src);
             return nombre;
         }
         
+        //HEADER
         const divHeader = crearElementos("div", "header");
         const aLogo = crearElementos("a", "logo", "#default", "RM");
         const divHeaderRight = crearElementos("div", "header-right");
@@ -32,6 +42,30 @@
         divHeaderRight.appendChild(aHome);
         divHeaderRight.appendChild(aContact);
         divHeaderRight.appendChild(aAbout);
+
+        //MAIN 
+        const divMain = crearElementos("div", "row");
+        const col1 = crearElementos("div", "column");
+        const col1_img1 = crearElementos("img", null, null, null, "https://i.pinimg.com/736x/e7/73/b2/e773b2ce5f7bce02eb5a635e72eb8a8c.jpg");
+        const col1_img2 = crearElementos("img", null, null, null, "https://i.pinimg.com/736x/12/c8/ee/12c8ee356fbe577be1ef9f0c7af7cd1e.jpg");
+        const col1_img3 = crearElementos("img", null, null, null, "https://i.pinimg.com/736x/a9/91/b5/a991b566f2277f5b39a385bdd5444829.jpg");
+        const col2 = crearElementos("div","column");
+        const col2_img1 = crearElementos("img", null, null, null, "https://i.pinimg.com/736x/98/73/96/987396f552b31f18e042a95b675f36bf.jpg");
+        const col2_img2 = crearElementos("img", null, null, null, "https://i.pinimg.com/736x/07/17/63/0717633c7b4cf7fc3339952cbc913797.jpg");
+
+        content.appendChild(divMain);
+        divMain.appendChild(col1);
+        col1.appendChild(col1_img1);
+        col1.appendChild(col1_img2);
+        col1.appendChild(col1_img3);
+        divMain.appendChild(col2);
+        col2.appendChild(col2_img1);
+        col2.appendChild(col2_img2);
+
+
+
+
+
     </script>
 </body>
 </html>
