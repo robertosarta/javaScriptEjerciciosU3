@@ -12,32 +12,85 @@
     <script>
         const content = document.querySelector(".content");
 
-        function crearElementos(tipo, clase, href, textContent, src) {
+        function crearElementos(tipo, clase, href, textContent, src, id) {
             const nombre = document.createElement(tipo);
             if (clase) nombre.className = (clase);
             if (href) nombre.href = (href);
             if (textContent) nombre.textContent = textContent;
             if (src) nombre.src = (src);
+            if (id) nombre.id = (id);
             return nombre;
         }
-        
+        function crearFoto(nombre, clase, urlImagen, claseImg) {
+            const contenedor = document.createElement("div");
+            if (clase) contenedor.className = (clase);
+            const img = document.createElement("img");
+            img.src = urlImagen;
+            img.style.width = "100%";
+
+            const nombreTexto = document.createElement("p");
+            nombreTexto.textContent = nombre;
+
+            contenedor.appendChild(img);
+            contenedor.appendChild(nombreTexto);
+            return contenedor;
+        }
         //HEADER
-        const divHeader = crearElementos("div", "header");
-        const aLogo = crearElementos("a", "logo", "#default", "RM");
+        const divHeader = crearElementos("div", "header", null, null, null, "inicio");
+        const aLogo = crearElementos("a", "logo", null, "RMR");
         const divHeaderRight = crearElementos("div", "header-right");
         const aHome = crearElementos("a", "header-right", "#home", "Home");
+        const aDesigns = crearElementos("a", null, "#designs", "Designs");
         const aContact = crearElementos("a", null, "#contact", "Contact");
-        const aAbout = crearElementos("a", null, "#about", "About");
+        
 
         content.appendChild(divHeader);
         divHeader.appendChild(aLogo);
         divHeader.appendChild(divHeaderRight);
         divHeaderRight.appendChild(aHome);
+        divHeaderRight.appendChild(aDesigns);
         divHeaderRight.appendChild(aContact);
-        divHeaderRight.appendChild(aAbout);
+        
 
         //MAIN 
-        const divMain = crearElementos("div", "row");
+        const divMain = crearElementos("div","main");
+        //HOME
+        const divSectionHome = crearElementos("div", null, null, null, null, "home");
+        const title = crearElementos("h1", null, null, "About us");
+        const paragraph = crearElementos("p", null, null, "We are a small studio placed in Sartaguda, Navarra. Our team works mostly on fantasy and mithology designs, we work effortly for you to be satisfied. A close relation with our clients is the priority here, when someone comes her with an special idea we mentor him trough all the styles and posibilities that we can offer to make the perfect artwork that fits like a suit on his skin. Here on our page you can see the available designs that we have at this moment, feel free to explore them and tell us if you like any of them, or maybe you have any idea on editing one just to be more personal, any case welcome to RMR");
+        const ourTeamContainer = crearElementos("div", "our-team-container");
+        const divisor1 = crearElementos("div", "divisor");
+        const subtitle = crearElementos("h3", null, null, "Our team:");
+        const divTeamPhotos = crearElementos("div", "team-photos-container");
+        const photo1 = crearFoto("Juanito", "photo-block", "https://magazink.inkonsky.com/wp-content/uploads/2024/06/juniorgonzalez.tattoo_1704171435_3271149546263284020_5382354259-819x1024.jpg");
+        const photo2 = crearFoto("Bombardiro", "photo-block", "https://voltgallerytattoo.com/wp-content/uploads/2024/02/Richi-VOLT-GALLERY-TATOO.jpg");
+        const photo3 = crearFoto("Espinete", "photo-block", "https://cdn0.bodas.net/article-real-wedding/578/3_2/1280/jpg/4866844.jpeg");
+        const photo4 = crearFoto("Machiavelo", "photo-block", "https://logiabarcelona.com/wp-content/uploads/2015/11/bangbang2f-1-web.jpg");
+        const photo5 = crearFoto("Horus", "photo-block", "https://img.lavdg.com/sc/NnXq3XaQ8Xf5dZLUxnGyUQ8F39c=/1280x/2019/03/20/00121553096282854474391/Foto/P13M9723.jpg");
+        const divisor2 = crearElementos("div", "divisor");
+
+        content.appendChild(divMain);
+        divMain.appendChild(divSectionHome);
+
+        divSectionHome.appendChild(title);
+        divSectionHome.appendChild(paragraph);
+
+        divSectionHome.appendChild(ourTeamContainer);
+        ourTeamContainer.appendChild(subtitle);
+        ourTeamContainer.appendChild(divisor1);
+        ourTeamContainer.appendChild(divTeamPhotos);
+        divTeamPhotos.appendChild(photo1);
+        divTeamPhotos.appendChild(photo2);
+        divTeamPhotos.appendChild(photo3);
+        divTeamPhotos.appendChild(photo4);
+        divTeamPhotos.appendChild(photo5);
+        ourTeamContainer.appendChild(divisor2);
+
+        //COLUMNS
+        const contenedorSeccionColumnas = crearElementos("div", null, null, null, null, "designs");
+        const tituloDiseños = crearElementos("h1", null, null, "Designs");
+        const divisor3 = crearElementos("div", "divisor");
+        const divSectionCol = crearElementos("div", "row", null, null, null, "#designs");
         const col1 = crearElementos("div", "column");
         const col1_img1 = crearElementos("img", null, null, null, "https://i.pinimg.com/736x/e7/73/b2/e773b2ce5f7bce02eb5a635e72eb8a8c.jpg");
         const col1_img2 = crearElementos("img", null, null, null, "https://i.pinimg.com/736x/12/c8/ee/12c8ee356fbe577be1ef9f0c7af7cd1e.jpg");
@@ -47,27 +100,52 @@
         const col2_img2 = crearElementos("img", null, null, null, "https://i.pinimg.com/736x/07/17/63/0717633c7b4cf7fc3339952cbc913797.jpg");
         const col2_img3 = crearElementos("img", null, null, null, "https://i.pinimg.com/736x/c8/91/76/c891768e51459e3f83d566d4da579cf1.jpg");
         const col3 = crearElementos("div", "column");
-        const col3_img1 = crearElementos("img", null, null, null, "https://i.pinimg.com/736x/3c/ba/d3/3cbad395f3d2bda945d7dc6711d2ff76.jpg");
+        const col3_img1 = crearElementos("img", null, null, null, "https://i.pinimg.com/736x/37/66/ce/3766ceb324559feca2115ba1d00ae5ab.jpg");
         const col3_img2 = crearElementos("img", null, null, null, "https://i.pinimg.com/736x/3c/ba/d3/3cbad395f3d2bda945d7dc6711d2ff76.jpg");
         const col3_img3 = crearElementos("img", null, null, null, "https://i.pinimg.com/736x/87/56/e4/8756e47710441136712e498a3f8e5ce0.jpg");
+        const divisor4 = crearElementos("div", "divisor");
         
-        content.appendChild(divMain);
-        divMain.appendChild(col1);
+        divMain.appendChild(contenedorSeccionColumnas);
+        contenedorSeccionColumnas.appendChild(divisor3);
+        contenedorSeccionColumnas.appendChild(tituloDiseños);
+        contenedorSeccionColumnas.appendChild(divSectionCol);
+        divSectionCol.appendChild(col1);
         col1.appendChild(col1_img1);
         col1.appendChild(col1_img2);
         col1.appendChild(col1_img3);
-        divMain.appendChild(col2);
+        divSectionCol.appendChild(col2);
         col2.appendChild(col2_img1);
         col2.appendChild(col2_img2);
         col2.appendChild(col2_img3);
-        divMain.appendChild(col3);
+        divSectionCol.appendChild(col3);
         col3.appendChild(col3_img1);
         col3.appendChild(col3_img2);
         col3.appendChild(col3_img3);
+        divSectionCol.appendChild(divisor4);
 
+        //CONTACT
+        const divSeccionContact = crearElementos("div", null, null, null, null, "contact");
+        const divisor5 = crearElementos("div", "divisor");
+        const tituloContact = crearElementos("h1", null, null, "Contact");
+        const dato1 = crearElementos("p", null, null, "Telefono: 608854163");
+        const dato2 = crearElementos("p", null, null, "Email: tattoostudioRMR@gmail.com");
+        const dato3 = crearElementos("p", null, null, "Adress: Street Guadalupe, N3, Sartaguda, Navarra");
+        const divisor6 = crearElementos("div", "divisor");
 
+        divMain.appendChild(divSeccionContact);
+        divSeccionContact.appendChild(divisor5);
+        divSeccionContact.appendChild(tituloContact);
+        divSeccionContact.appendChild(dato1);
+        divSeccionContact.appendChild(dato2);
+        divSeccionContact.appendChild(dato3);
+        divSeccionContact.appendChild(divisor6);
 
+        //FOOTER
+        const footerDiv = crearElementos("div", "footer");
+        const footerElement = crearElementos("a",null, "#inicio", "UP");
 
+        divMain.appendChild(footerDiv);
+        footerDiv.appendChild(footerElement);
 
     </script>
 </body>
