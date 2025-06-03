@@ -1,0 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    padding: 3.75rem;
+    text-align: center;
+    background-color: #59ffc8;
+    color: white;
+    font-size: 3rem;
+    font-weight: 900;
+}
+
+.mainContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainContainer div {
+    background-color: #d8fff8;
+    padding: 3rem;
+    height: auto;
+    width: auto;
+    margin-top: 8rem;
+    border: solid rgb(56, 56, 56) 0.15rem;
+    border-radius: 0.5rem;
+}
+
+.boton {
+    background-color: #d8fff8;
+    padding: 0.5rem;
+    border: solid #d8fff8 0.15rem;
+    cursor: pointer;
+}

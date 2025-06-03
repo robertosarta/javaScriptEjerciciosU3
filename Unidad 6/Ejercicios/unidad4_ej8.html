@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/Ejercicios/unidad4_ej8.css">
+</head>
+<body>
+<header class="header">  
+    <p>ALQUILA AQUI TU COCHE</p>
+</header>
+
+<div class="mainContainer">
+    <div class="mainNotificacion">
+    </div>
+</div>
+
+    <script>
+        function crearElementos(tipo, clase, type, textContent, src, id, onclick) {
+            const nombre = document.createElement(tipo);
+            if (clase) nombre.className = (clase);
+            if (type) nombre.type = (type);
+            if (textContent) nombre.textContent = textContent;
+            if (src) nombre.src = (src);
+            if (id) nombre.id = (id);
+            if (onclick) nombre.onclick = (onclick);
+            return nombre;
+        }
+
+        function reescribir(elemento, ...nuevos) {
+            elemento.innerHTML = "";
+            nuevos.forEach(elem => elemento.appendChild(elem));
+        }
+
+
+        const mainContainer = document.querySelector(".mainContainer");
+        const mainNotificacion = document.querySelector(".mainNotificacion");
+
+        const botonInicio = crearElementos("button", "boton", null, "Alquilar", null, null, "");
+        mainNotificacion.appendChild(botonInicio);
+        const parrafoEdad = crearElementos("p", null, null, "Buenos dias, has elegido alquilar un coche, ¿que edad tienes?");
+        const inputEdad = crearElementos("input", null, "number");
+        const botonContinuar = crearElementos("button", "boton", null, "Ok", null, null, "");
+        
+        botonInicio.onclick = () => reescribir(mainNotificacion, parrafoEdad, inputEdad, botonContinuar);
+        botonContinuar.onclick = () => siguientePaso();
+
+        let mayorEdad = false;
+        let edad = 0;
+        let paso = 0;
+        let inputNombre = null;
+        const personas = {};
+        function crearUsuario(usuario) {
+            return personas[usuario] = {nombre: usuario};
+        }
+    
+        function siguientePaso() {
+            if (paso === 0){
+                edad = parseInt(inputEdad.value);
+                if (edad < 18){
+                    alert("Debes tener al menos 18 años para esto.");
+                    return;
+                }
+                mayorEdad = true;
+                paso++;
+                const parrafoNombre = crearElementos("p", null, null, "¿cual es tu nombre?");
+                inputNombre = crearElementos("input", null, "text");
+                reescribir(mainNotificacion, parrafoNombre, inputNombre, botonContinuar);
+            }else if (paso === 1 || mayorEdad === true){
+                
+                crearUsuario(inputNombre.value.trim());
+                if (!nombre){
+                    alert("Por favor escribe un nombre.");
+                    return;
+                }
+                paso++;
+                reescribir(mainNotificacion, parrafoNombre, inputNombre, botonContinuar);
+            }
+        }
+        console.log(edad);
+
+    </script>
+</body>
+</html>
