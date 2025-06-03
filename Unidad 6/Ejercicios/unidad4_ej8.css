@@ -34,3 +34,14 @@
     border: solid #d8fff8 0.15rem;
     cursor: pointer;
 }
+
+.botonsi {
+    padding: 0.5rem;
+    margin: 1rem;
+    cursor: pointer;
+}
+.botonno {
+    padding: 0.5rem;
+    margin: 1rem;
+    cursor: pointer;
+}

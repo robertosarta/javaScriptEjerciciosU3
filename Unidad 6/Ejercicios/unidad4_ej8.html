@@ -64,22 +64,29 @@
                 }
                 mayorEdad = true;
                 paso++;
+                const parrafoCarnet = crearElementos("p", null, null, "¿Tienes carnet de conducir?");
+                const botonSi = crearElementos("button", "botonsi", null, "si");
+                const botonNo = crearElementos("button", "botonno", null, "no");
+                botonSi.onclick = () => {
+                    paso++
+                    siguientePaso();
+                };
+                botonNo.onclick = () => {alert("Lo sentimos no puedes continuar con el proceso si no tienes carnet de conducir.")};
+                reescribir(mainNotificacion, parrafoCarnet, botonSi, botonNo);
+            }else if (paso === 1){
                 const parrafoNombre = crearElementos("p", null, null, "¿cual es tu nombre?");
                 inputNombre = crearElementos("input", null, "text");
                 reescribir(mainNotificacion, parrafoNombre, inputNombre, botonContinuar);
-            }else if (paso === 1 || mayorEdad === true){
-                
-                crearUsuario(inputNombre.value.trim());
+            }else if (paso === 2){
+                const nombre = inputNombre.value.trim();
                 if (!nombre){
                     alert("Por favor escribe un nombre.");
                     return;
                 }
+                crearUsuario(nombre);
                 paso++;
-                reescribir(mainNotificacion, parrafoNombre, inputNombre, botonContinuar);
             }
         }
-        console.log(edad);
-
     </script>
 </body>
 </html>
