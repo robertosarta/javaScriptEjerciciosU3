@@ -27,7 +27,6 @@
             if (onclick) nombre.onclick = (onclick);
             return nombre;
         }
-
         function reescribir(elemento, ...nuevos) {
             elemento.innerHTML = "";
             nuevos.forEach(elem => elemento.appendChild(elem));
@@ -46,15 +45,21 @@
         botonInicio.onclick = () => reescribir(mainNotificacion, parrafoEdad, inputEdad, botonContinuar);
         botonContinuar.onclick = () => siguientePaso();
 
-        let mayorEdad = false;
         let edad = 0;
         let paso = 0;
         let inputNombre = null;
+        let inputApellido = null;
+        let tieneCarnet = null;
         const personas = {};
-        function crearUsuario(usuario) {
-            return personas[usuario] = {nombre: usuario};
+        function crearUsuario(nombre, apellido, edad, carnet) {
+            personas[nombre] = {
+                nombre: nombre,
+                apellido: apellido,
+                edad: edad,
+                carnet: carnet
+            };
         }
-    
+
         function siguientePaso() {
             if (paso === 0){
                 edad = parseInt(inputEdad.value);
@@ -62,12 +67,11 @@
                     alert("Debes tener al menos 18 años para esto.");
                     return;
                 }
-                mayorEdad = true;
-                paso++;
                 const parrafoCarnet = crearElementos("p", null, null, "¿Tienes carnet de conducir?");
                 const botonSi = crearElementos("button", "botonsi", null, "si");
                 const botonNo = crearElementos("button", "botonno", null, "no");
                 botonSi.onclick = () => {
+                    tieneCarnet = true;
                     paso++
                     siguientePaso();
                 };
@@ -76,14 +80,18 @@
             }else if (paso === 1){
                 const parrafoNombre = crearElementos("p", null, null, "¿cual es tu nombre?");
                 inputNombre = crearElementos("input", null, "text");
-                reescribir(mainNotificacion, parrafoNombre, inputNombre, botonContinuar);
+                const parrafoApellido = crearElementos("p", null, null, "¿Y tu apellido?");
+                inputApellido = crearElementos("input", null, "text");
+                reescribir(mainNotificacion, parrafoNombre, inputNombre, parrafoApellido, inputApellido, botonContinuar);
             }else if (paso === 2){
                 const nombre = inputNombre.value.trim();
-                if (!nombre){
-                    alert("Por favor escribe un nombre.");
+                const apellido = inputApellido.value.trim();
+                if (!nombre || !apellido){
+                    alert("Por favor escribe un nombre y apellido");
                     return;
                 }
-                crearUsuario(nombre);
+                crearUsuario(nombre, apellido, edad, tieneCarnet);
+                console.log(personas);
                 paso++;
             }
         }

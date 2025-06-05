@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.content-max {
+    width: 95rem;
+    margin: 0 auto;
+}
+
+.flex-general{
+    display: flex;
+}
+.flex-general_column{
+    display: flex;
+    flex-direction: column;
+}
+
+.background{
+    background-color:#24282c;
+}
+
+.font-color{
+    color: white;
+}
+
+.font-colorAlt{
+    color: rgb(175, 175, 175);
+}
+
+.fs-subtitle{
+    font-size: 1.2rem;
+}
+
+.font-bold{
+    font-weight: 500;
+}
+
+.font-normal{
+    font-weight: normal;
+}

@@ -1,0 +1,49 @@
+.title-search_container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.section-search{
+    width: 100%;
+    border-bottom: 0.125rem solid #f1f1f1;
+    padding: 2rem 0rem 0.1rem 0rem;
+    justify-content: space-between;
+}
+.search-input{
+    text-align: center;
+    padding: 0.2rem;
+    width: 20rem;
+    border: solid #1f1f1f;
+    border-radius: 1rem;
+    border-width: 0.2rem;
+}
+.search-input:focus{
+    outline: none;
+    border: 0.123rem solid #000000;
+    box-shadow: 0 0 0.5rem #007be180;
+}
+.search-button{
+    height: 1.9rem;
+    width: 4rem;
+    border: solid #1f1f1f;
+    border-radius: 1rem;
+    border-width: 0.2rem;
+}
+.section-planets_title{
+    text-align: center;
+    width: 100%;
+    border-bottom: 0.125rem solid #dfdfdf;
+    padding: 12rem 0rem 0.3rem 0rem;
+}
+.section-planets{
+    padding: 3rem;
+    justify-content: space-between;
+}
+.section-planets_container{
+    width: 16rem;
+    height: 16rem;
+    background-color: #343a40;
+    border: solid #1f1f1f;
+    border-radius: 1rem;
+    padding: 2rem;
+}
