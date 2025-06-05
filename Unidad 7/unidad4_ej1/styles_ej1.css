@@ -1,3 +1,7 @@
+.main-title{
+    font-size: 3rem;
+    color: #ffffffd3;
+}
 .title-search_container{
     display: flex;
     justify-content: flex-end;
@@ -5,9 +9,10 @@
 }
 .section-search{
     width: 100%;
-    border-bottom: 0.125rem solid #f1f1f1;
-    padding: 2rem 0rem 0.1rem 0rem;
+    border-bottom: 0.18rem solid #790c0c;
+    padding: 2rem 1rem 0.1rem 1rem;
     justify-content: space-between;
+
 }
 .search-input{
     text-align: center;
@@ -20,7 +25,7 @@
 .search-input:focus{
     outline: none;
     border: 0.123rem solid #000000;
-    box-shadow: 0 0 0.5rem #007be180;
+    box-shadow: 0rem 0rem 0.5rem #007be180;
 }
 .search-button{
     height: 1.9rem;
@@ -29,21 +34,46 @@
     border-radius: 1rem;
     border-width: 0.2rem;
 }
+.search-button:hover{
+    cursor: pointer;
+}
 .section-planets_title{
     text-align: center;
     width: 100%;
     border-bottom: 0.125rem solid #dfdfdf;
-    padding: 12rem 0rem 0.3rem 0rem;
+    margin: 12rem 1rem 1rem 1rem;
+    padding: 0.6rem 0rem 0.6rem 0rem;
+    background-color: #343a40;
+    border: solid #1f1f1f;
+    border-radius: 0.3rem;
+    border-width: 0.2rem;
+    box-shadow: 0.1rem 0.1rem 0.5rem #f5f5f580
 }
 .section-planets{
     padding: 3rem;
     justify-content: space-between;
 }
 .section-planets_container{
-    width: 16rem;
-    height: 16rem;
+    max-width: 300px;
     background-color: #343a40;
     border: solid #1f1f1f;
     border-radius: 1rem;
-    padding: 2rem;
+    padding: 1rem;
+    box-shadow: 0.1rem 0.1rem 0.5rem #f5f5f580;
+}
+.planets-container_name{
+    text-align: center;
+}
+.planets-container_image{
+    justify-content: center;
+    padding: 1rem;
+}
+.planets-content_image{
+    max-width: 100%;
+    max-height: 100%;
+}
+.planets-container_list{
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem;
 }
