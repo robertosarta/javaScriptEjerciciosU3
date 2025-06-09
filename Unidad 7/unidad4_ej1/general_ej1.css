@@ -5,7 +5,7 @@
 }
 
 .content-max {
-    width: 95rem;
+    max-width: 95rem;
     margin: 0 auto;
 }
 
