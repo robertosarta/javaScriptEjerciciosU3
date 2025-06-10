@@ -41,7 +41,7 @@ function buscar() {
     const planetsContainerList = createElement("div", "planets-container_list");
     const uList = createElement("ul");
     const listElement1 = createElement("li", "list-element", null, `Color: ${planetaColor}`);
-    const listElement2 = createElement("li", "list-element", null, `Temperatura: ${planetaTemperatura}`);
+    const listElement2 = createElement("li", "list-element", null, `Temperatura: ${planetaTemperatura}º`);
     sectionPlanetsContainer.appendChild(planetsContainerList);
     planetsContainerList.appendChild(uList);
     uList.appendChild(listElement1);
