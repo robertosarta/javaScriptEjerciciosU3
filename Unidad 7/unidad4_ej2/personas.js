@@ -215,7 +215,7 @@ function buscar() {
         cardContainer.style.backgroundColor = nuevaPersona[n].eyeColor;
         appendCard(userImage, userName, userAge, userEmail, userAddress, userEyeColor);
         inputNumArray.value = "";
-    } else if (inputTextArray){
+    } else if (t.length > 0){
         cardContainer.innerHTML = "";
         const userFound = nuevaPersona.find(persona => normalizarTexto(persona.name).includes(normalizarTexto(t)));
         if (userFound){
