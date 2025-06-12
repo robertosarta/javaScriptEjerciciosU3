@@ -4,26 +4,30 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/unidad4_ej2/general.css">
 </head>
-<body>
-    <div class="main-section">
+<body class="background">
+    <div class="main-section content-max">
         <div class="section-container_user" id="containerUser">
-            <img class="container-user_image" id="imageUser" src="" alt="">
-            <h1 class="container-user_name" id="nameUser">NOMBRE</h1>
-            <p class="container-user_age" id="ageUser">EDAD</p>
-            <p class="container-user_age" id="emailUser">EMAIL</p>
-            <p class="container-user_adress" id="adressUser">DIRECCION</p>
-            <p class="container-user_eyeColor" id="eyeColorUser">COLOR DE OJOS</p>
+            <img class="container-user_image" id="imageUser" src="https://randomuser.me/api/portraits/men/30.jpg" alt="">
+            <h1 class="container-user_name" id="nameUser">Ward Fulton</h1>
+            <p class="container-user_age" id="ageUser">31</p>
+            <p class="container-user_age" id="emailUser">wardfulton@qaboos.com</p>
+            <p class="container-user_adress" id="adressUser">978 Victor Road, Sims, American Samoa, 9727</p>
+            <p class="container-user_eyeColor" id="eyeColorUser">green</p>
         </div>
 
-        <div>
-            <input id="inputNum" type="text" placeholder="Busca por numero a traves del array">
-            <button class="button-search_array">Ok</button>
+        <div class="container-buttons">
+            <div class="container-buttons_block">
+                <input id="inputNum" class="input" type="number" placeholder="Busca por numero a traves del array">
+                <button class="button-search_array">Ok</button>
+            </div>
+            <div class="container-buttons_block">
+                <input id="inputText" type="text" class="input" placeholder="Busca por texto a traves del array">
+                <button class="button-search_array">Ok</button>
+            </div>
         </div>
-        <div>
-            <input id="inputText" type="text" placeholder="Busca por texto a traves del array">
-            <button class="button-search_array">Ok</button>
-        </div>
+        
     </div>
 
     <script src="/unidad4_ej2/personas.js"></script>

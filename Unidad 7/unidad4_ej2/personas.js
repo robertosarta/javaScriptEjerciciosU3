@@ -212,7 +212,9 @@ function buscar() {
         const userEmail = crearElemento("p", ".containerUser-email", nuevaPersona[n].email);
         const userAddress = crearElemento("p", ".containerUser-address", nuevaPersona[n].address);
         const userEyeColor = crearElemento("p", ".containerUser-eyeColor", nuevaPersona[n].eyeColor);
+        cardContainer.style.backgroundColor = nuevaPersona[n].eyeColor;
         appendCard(userImage, userName, userAge, userEmail, userAddress, userEyeColor);
+        inputNumArray.value = "";
     } else if (inputTextArray){
         cardContainer.innerHTML = "";
         const userFound = nuevaPersona.find(persona => normalizarTexto(persona.name).includes(normalizarTexto(t)));
@@ -223,7 +225,9 @@ function buscar() {
             const userEmail = crearElemento("p", ".containerUser-email", userFound.email);
             const userAddress = crearElemento("p", ".containerUser-address", userFound.address);
             const userEyeColor = crearElemento("p", ".containerUser-eyeColor", userFound.eyeColor);
+            cardContainer.style.backgroundColor = userFound.eyeColor;
             appendCard(userImage, userName, userAge, userEmail, userAddress, userEyeColor);
+            inputTextArray.value = "";
         }else{
             alert("No se ha encontrado a nadie con ese nombre");
         }
