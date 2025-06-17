@@ -1,0 +1,42 @@
+.header{
+    background-color: #d5c08d;
+    color: #fff;
+    padding: 1rem 0rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+.header-logo{
+    font-size: 1.75rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-left: 1rem;
+}
+
+.header-menu a{
+    color: #e0e0e0;
+    text-decoration: 0;
+    font-size: 16px;
+    padding: 0rem 0rem;
+    border-radius: 6px;
+    transition: background 0.3s, color 0.3s;
+    margin-right: 1.5rem;
+}
+.header-menu a:hover{
+    color: #b5a377;
+}
+
+.main{
+    margin-top: 90px; /*separa del header que esta fixed y si no se come la pagina*/
+}
+.section-brocha{
+    border-radius: 0.5rem ;
+    border: solid #d5c08d;
+    width: 12rem;
+    padding: 2rem;
+}
