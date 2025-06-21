@@ -30,7 +30,7 @@ let items = {
             about:
                 "No se, es un jodido tronco pero a ver... yo me lo compraria esta tirado de precio",
             cart: 0,
-        },
+        }
     };
 
 let arrayItems = Object.values(items); //convierte items en array
@@ -42,11 +42,16 @@ let nuevoItem = arrayItems.map(p => ({
     cart: p.cart,
 }));
 
+const savedCart = JSON.parse(localStorage.getItem('carrito')); //
+if (savedCart){
+    nuevoItem = savedCart
+};
+
 
 /* CREAR OBJETOS EN EL DOM */
 const main =  document.querySelector("main");
 
-function crearElemento(tipo, classElement, text, src, alt) {
+function crearElemento(tipo, classElement, text, src, alt,) {
     const elem = document.createElement(tipo);
     if(classElement) elem.className = (classElement);
     if(text) elem.textContent = (text);
@@ -55,26 +60,6 @@ function crearElemento(tipo, classElement, text, src, alt) {
     return elem;
 };
 
-// const brochaCard = crearElemento("div", "section-product_card");
-// const brochaContainerTitle = crearElemento("div", "product-title");
-// const brochaName = crearElemento("h1", "product-name", nuevoItem.name);
-// const brochaPrecio = crearElemento("p", "product-price", nuevoItem.price);
-// const brochaContainerImage = crearElemento("div", "product-container_image");
-// const brochaPicture = crearElemento("img", "product-image", null, nuevoItem.picture);
-// const brochaCartContainer = crearElemento("div", "product-cart");
-// const brochaCartTextContainer = crearElemento("div", "product-cart_text-container");
-// const brochaCartText = crearElemento("p", null, nuevoItem.about);
-// const brochaProductContainer = crearElemento("div", "product-cart_container");
-// const brochaUnitsContainer = crearElemento("div", "product-units_container");
-// const brochaUnits = crearElemento("p", "product-units", nuevoItem.cart);
-// const brochaIcon = crearElemento("i", "product-icon bi bi-basket2-fill");
-// const brochaButtonContainer = crearElemento("div", "product-button_container");
-// const brochaButtonPlus = crearElemento("button", "product-button");
-// const brochaButtonPlusIcon = crearElemento("i", "bi bi-plus-lg");
-// const brochaButtonMinus = crearElemento("button", "product-button");
-// const brochaButtonMinusIcon = crearElemento("i", "bi bi-dash-lg");
-
-/*PRUEB*/
 function crearTarjetaProducto(item){
     const card = crearElemento("div", "section-product_card");
     const containerTitle = crearElemento("div", "product-title");
@@ -89,7 +74,7 @@ function crearTarjetaProducto(item){
 
     const productContainer = crearElemento("div", "product-cart_container");
     const unitsContainer = crearElemento("div", "product-units_container");
-    const units = crearElemento("p", "product-units", item.cart || "0");
+    const units = crearElemento("p", "product-units", item.cart || "0"); //quizas el || 0  se puede quitar (revisar)
     const icon = crearElemento("i", "product-icon bi bi-basket2-fill");
 
     const buttonContainer = crearElemento("div", "product-button_container");
@@ -109,13 +94,29 @@ function crearTarjetaProducto(item){
 
     containerTitle.append(name, price);
     containerImage.appendChild(picture);
-    card.append(containerTitle, containerImage, cartContainer);
+    card.append(containerTitle,containerImage, cartContainer);
+
+    buttonPlus.addEventListener("click", () => {
+        item.cart ++;
+        units.textContent = item.cart;
+        localStorage.setItem('carrito', JSON.stringify(nuevoItem));
+    })
+    buttonMinus.addEventListener("click", () => {
+        if (item.cart >= 1){
+            item.cart --;
+            units.textContent = item.cart;
+            localStorage.setItem('carrito', JSON.stringify(nuevoItem));
+        }
+    })
 
     return card;
-    }
+}
 
 nuevoItem.forEach(producto => {
     const card = crearTarjetaProducto(producto);
     main.appendChild(card);
 });
 /* CREAR OBJETOS EN EL DOM */
+
+/*INTERACTUAR CON OBJETOS Y CARRITO*/
+

@@ -34,6 +34,11 @@
 
 .main{
     margin-top: 90px; /*separa del header que esta fixed y si no se come la pagina*/
+    display: flex;
+    padding: 2rem;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 1rem;
 }
 .section-product_card{
     border-radius: 0.5rem ;
@@ -96,6 +101,7 @@
 .product-button_container{
     display: flex;
     flex-direction: column;
+    gap: 0.2rem;
 }
 .product-button{
     width: 2rem;
@@ -104,11 +110,12 @@
 
 /*CARRITO*/
 .cart-section{
-    margin-top: 90px; /*separa del header que esta fixed y si no se come la pagina*/
+    margin-top: 0.5625rem; /*separa del header que esta fixed y si no se come la pagina*/
     border: solid #585858;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
 }
 .cart-section-container{
     width: 3rem;
@@ -125,12 +132,13 @@
     display: flex;
     align-items: center;
     margin: 0rem 1.5rem 0rem 0rem;
+    max-width: 60rem;
+    width: 70%;
 }
 .cart-section-icons{
     border:solid #585858;
     border-radius: 0.5rem;
     padding: 1rem;
-    max-width: 60rem;
     width: 100%;
     word-wrap: break-word;
     overflow-wrap: break-word;
