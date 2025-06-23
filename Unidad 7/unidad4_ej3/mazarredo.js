@@ -6,6 +6,7 @@ let items = {
             about:
                 "Increible brocha, la mejor que hay. Comprala no pierdas el tiempo",
             cart: 0,
+            icon: "bi bi-brush-fill",
         },
         Llave: {
             picture: "https://previews.123rf.com/images/bassanini/bassanini1801/bassanini180100023/94158630-chromed-mechanical-key-used-on-a-white-background.jpg",
@@ -14,6 +15,7 @@ let items = {
             about:
                 "Maravillosa llave, la mejor que hay. Comprala no dudes!",
             cart: 0,
+            icon: "bi bi-wrench",
         },
         Martillo: {
             picture: "https://i.etsystatic.com/16310286/r/il/5e7a3f/2135646140/il_340x270.2135646140_fw6x.jpg",
@@ -22,6 +24,7 @@ let items = {
             about:
                 "Un martillo de gran calidad, se dice que fue encontrado en Noruega y lo usaba el mismisimo Thor. Deja de leer y compra ya!",
             cart: 0,
+            icon: "bi bi-hammer",
         },
         Tronco: {
             picture: "https://http2.mlstatic.com/D_884145-MLM73916325636_012024-O.jpg",
@@ -30,23 +33,25 @@ let items = {
             about:
                 "No se, es un jodido tronco pero a ver... yo me lo compraria esta tirado de precio",
             cart: 0,
-        }
+            icon: "bi bi-tree-fill",
+        },
     };
 
-let arrayItems = Object.values(items); //convierte items en array
-let nuevoItem = arrayItems.map(p => ({
+let nuevoItem = [];
+const savedCart = JSON.parse(localStorage.getItem('carrito'));
+if (savedCart){
+    nuevoItem = savedCart   //actualiza el array desde el otro js
+}else {
+    let arrayItems = Object.values(items); //lo vuelve a crear si no existe (convierte items en array)
+    nuevoItem = arrayItems.map(p => ({
     name: p.name,
     picture: p.picture,
     price: p.price,
     about: p.about,
     cart: p.cart,
+    icon: p.icon,
 }));
-
-const savedCart = JSON.parse(localStorage.getItem('carrito')); //
-if (savedCart){
-    nuevoItem = savedCart
-};
-
+}
 
 /* CREAR OBJETOS EN EL DOM */
 const main =  document.querySelector("main");
@@ -117,6 +122,4 @@ nuevoItem.forEach(producto => {
     main.appendChild(card);
 });
 /* CREAR OBJETOS EN EL DOM */
-
-/*INTERACTUAR CON OBJETOS Y CARRITO*/
 

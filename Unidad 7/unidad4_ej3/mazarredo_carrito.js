@@ -1,10 +1,20 @@
+let nuevoItem = [];
 const savedCart = JSON.parse(localStorage.getItem('carrito'));
 if (savedCart){
-    nuevoItem = savedCart
-};
+    nuevoItem = savedCart  //actualiza el array desde el otro js
+}else {
+    const arrayItems = Object.values(items); //lo vuelve a crear si no existe (convierte items en array)
+    nuevoItem = arrayItems.map(p => ({
+    name: p.name,
+    picture: p.picture,
+    price: p.price,
+    about: p.about,
+    cart: p.cart,
+    icon: p.icon,
+}));
+}
 
 const main =  document.querySelector("main");
-
 function crearElemento(tipo, classElement, text, src, alt,) {
     const elem = document.createElement(tipo);
     if(classElement) elem.className = (classElement);
@@ -36,15 +46,32 @@ function crearTarjetaProducto(item){
     cartContainer.appendChild(cartContainerImage);
     cartSection.append(cartContainer, cartName,cartInfo);
 
+    cartIcons.innerHTML = "";
+    for (let i = 0; i < item.cart; i++) {
+        const icon = crearElemento("i", item.icon);
+        cartIcons.appendChild(icon);        
+    }
+
     buttonPlus.addEventListener("click", () => {
         item.cart ++;
         cartName.textContent = `${item.name}: ${item.cart}`;
+        cartIcons.innerHTML = "";
+        for (let i = 0; i < item.cart; i++) {
+            const icon = crearElemento("i", item.icon);
+            cartIcons.appendChild(icon);
+        }
         localStorage.setItem('carrito', JSON.stringify(nuevoItem));
     })
     buttonMinus.addEventListener("click", () => {
         if (item.cart >= 1){
             item.cart --;
             cartName.textContent = `${item.name}: ${item.cart}`;
+
+            cartIcons.innerHTML = "";
+            for (let i = 0; i < item.cart; i++) {
+                const icon = crearElemento("i", item.icon);
+                cartIcons.appendChild(icon);
+            }
             localStorage.setItem('carrito', JSON.stringify(nuevoItem));
         }
     })
