@@ -1,0 +1,1 @@
+Aqui tambien me fui un poco del guion del ejercicio y quise investigar como conectar dos secciones entre si para mantener los datos del array generado a partir del objeto 
